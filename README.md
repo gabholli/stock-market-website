@@ -15,7 +15,7 @@ I built this stock market app using the following:
 ### Installing
 - This web page does not require any direct installation on your computer
 ### Executing program
-- To execute, navigate within your web browser to https://stock-market.netlify.app
+- To execute, navigate within your web browser to https://market-website.netlify.app
 
 ## Authors
 Gabe Hollifield
