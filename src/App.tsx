@@ -1,14 +1,17 @@
 import './App.css'
 import { Routes, Route } from "react-router"
 import Home from './pages/home'
-import About from './pages/about'
+import SiteLayout from './components/SiteLayout'
+import Data from './pages/data.'
 
-function App() {
+const App = () => {
 
   return (
     <Routes>
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route element={<SiteLayout />}>
+        <Route index element={<Home />} />
+        <Route path="data" element={<Data />} />
+      </Route>
     </Routes>
   )
 }
