@@ -1,7 +1,7 @@
 import { Outlet } from "react-router"
 import Header from "./Header"
 
-const SiteLayout = () => {
+export default function SiteLayout() {
     return (
         <div className="bg-black min-h-dvh text-white font-googlesans">
             <Header />
@@ -9,5 +9,3 @@ const SiteLayout = () => {
         </div>
     )
 }
-
-export default SiteLayout

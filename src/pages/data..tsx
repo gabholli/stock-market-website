@@ -1,4 +1,4 @@
-const Data = () => {
+export default function Data() {
     return (
         <>
             <main>
@@ -7,5 +7,3 @@ const Data = () => {
         </>
     )
 }
-
-export default Data

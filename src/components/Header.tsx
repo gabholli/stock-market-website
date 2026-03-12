@@ -1,6 +1,6 @@
 import { NavLink } from "react-router"
 
-const Header = () => {
+export default function Header() {
     return (
         <>
             <nav className="flex items-center justify-center lg:justify-end lg:mr-24 gap-x-8 p-4 md:p-8
@@ -22,5 +22,3 @@ const Header = () => {
         </>
     )
 }
-
-export default Header

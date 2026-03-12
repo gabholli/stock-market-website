@@ -1,4 +1,4 @@
-const Home = () => {
+export default function Home() {
     return (
         <>
 
@@ -7,5 +7,3 @@ const Home = () => {
         </>
     )
 }
-
-export default Home

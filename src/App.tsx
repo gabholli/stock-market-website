@@ -6,7 +6,7 @@ import Data from './pages/data.'
 import WatchList from './pages/watchlist'
 import LogIn from './auth/authentication'
 
-const App = () => {
+export default function App() {
 
   return (
     <Routes>
@@ -20,4 +20,3 @@ const App = () => {
   )
 }
 
-export default App
