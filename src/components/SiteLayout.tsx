@@ -3,7 +3,7 @@ import Header from "./Header"
 
 export default function SiteLayout() {
     return (
-        <div className="bg-black min-h-dvh text-white font-googlesans">
+        <div className="font-googlesans">
             <Header />
             <Outlet />
         </div>
