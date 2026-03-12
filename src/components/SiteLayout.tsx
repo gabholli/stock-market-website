@@ -3,7 +3,7 @@ import Header from "./Header"
 
 const SiteLayout = () => {
     return (
-        <div className="bg-black min-h-dvh text-white">
+        <div className="bg-black min-h-dvh text-white font-googlesans">
             <Header />
             <Outlet />
         </div>
