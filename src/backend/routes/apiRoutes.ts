@@ -1,9 +1,6 @@
 import express from "express"
+import getUserList from "../controllers/getUserList"
 
 export const apiRouter = express.Router()
 
-apiRouter.get("/", (req, res) => {
-    console.log(req.query)
-    res.send("user list")
-})
-
+apiRouter.get("/", getUserList)
