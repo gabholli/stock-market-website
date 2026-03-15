@@ -4,7 +4,8 @@ import Home from './pages/home'
 import SiteLayout from './components/SiteLayout'
 import Data from './pages/data.'
 import WatchList from './pages/watchlist'
-import LogIn from './auth/authentication'
+import LogIn from './auth/login'
+import SignUp from './auth/signup'
 
 export default function App() {
 
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="data" element={<Data />} />
         <Route path="watchlist" element={<WatchList />} />
         <Route path="login" element={<LogIn />} />
+        <Route path="signup" element={<SignUp />} />
       </Route>
     </Routes>
   )
