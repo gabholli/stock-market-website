@@ -11,6 +11,7 @@ app.use(cors())
 app.use("/users", apiRouter)
 
 app.use((req, res) => {
+    console.log(req.query)
     res.send("Server here...")
 })
 
