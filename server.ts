@@ -5,6 +5,9 @@ import session from "express-session"
 
 const PORT = process.env.PORT || 3000
 const secret = process.env.SESSION_SECRET
+if (!secret) {
+    throw new Error("SECRET_KEY environment variable is not set")
+}
 
 const app = express()
 

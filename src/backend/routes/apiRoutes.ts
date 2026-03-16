@@ -1,6 +1,6 @@
 import express from "express"
-import getUserList from "../controllers/getUserList.ts"
+import getStockList from "../controllers/getUserList.ts"
 
 export const apiRouter = express.Router()
 
-apiRouter.get("/", requireAuth, getUserList)
+apiRouter.get("/", getStockList)
