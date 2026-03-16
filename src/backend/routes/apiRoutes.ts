@@ -1,5 +1,5 @@
 import express from "express"
-import getStockList from "../controllers/getUserList.ts"
+import getStockList from "../controllers/getStockList.ts"
 
 export const apiRouter = express.Router()
 
