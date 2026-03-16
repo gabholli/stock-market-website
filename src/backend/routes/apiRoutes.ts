@@ -3,4 +3,4 @@ import getUserList from "../controllers/getUserList.ts"
 
 export const apiRouter = express.Router()
 
-apiRouter.get("/", getUserList)
+apiRouter.get("/", requireAuth, getUserList)
