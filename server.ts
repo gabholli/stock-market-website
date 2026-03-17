@@ -4,7 +4,6 @@ import { apiRouter } from "./src/backend/routes/apiRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
 
-dotenv.config()
 
 const PORT = process.env.PORT || 3000
 const secret = process.env.SESSION_SECRET
@@ -13,6 +12,8 @@ if (!secret) {
 }
 
 const app = express()
+
+dotenv.config()
 
 app.use(cors())
 
