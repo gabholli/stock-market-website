@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <>
             <nav className="flex items-center justify-center lg:justify-end lg:mr-24 gap-x-8 p-4 md:p-8
-                shadow-md md:text-3xl 2xl:text-4xl text-center">
+                shadow-md md:text-3xl 2xl:text-3xl text-center">
                 <NavLink to="/" end>
                     Home
                 </NavLink>
