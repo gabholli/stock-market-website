@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Response } from "express";
+import type { Request, Response } from "express";
 
 export default async function getStockList(req: Request, res: Response) {
     try {
