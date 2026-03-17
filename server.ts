@@ -3,8 +3,10 @@ import cors from "cors"
 import { stocksRouter } from "./src/backend/routes/stockRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
+import apicache from "apicache"
 
 const app = express()
+let cache = apicache.middleware
 
 dotenv.config()
 
@@ -30,7 +32,7 @@ app.use(session({
 
 }))
 
-app.use("/stocks", stocksRouter)
+app.use("/stocks", cache("5 minutes"), stocksRouter)
 
 app.use((req, res) => {
     console.log(req.body)

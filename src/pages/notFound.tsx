@@ -2,7 +2,7 @@ import { Link } from "react-router"
 
 export default function NotFound() {
     return (
-        <div className="flex flex-col justify-center items-center
+        <div className="flex flex-col flex-1 justify-center items-center
             gap-y-8 px-2">
             <h1 className="text-center text-3xl">
                 Sorry, the page you were looking for was not found

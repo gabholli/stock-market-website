@@ -5,7 +5,7 @@ export default async function getStockList(req: Request, res: Response) {
     try {
         const response = await axios.get(`https://api.twelvedata.com/price?symbol=AAPL&apikey=${process.env.DATA_KEY}`)
         console.log(response.data)
-        console.log(req.body)
+        console.log(req.query.symbol)
 
         res.status(200).json(response.data)
     } catch (err) {

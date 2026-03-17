@@ -5,7 +5,7 @@ export default function Home() {
             <main
                 className="flex flex-1 justify-center items-center"
             >
-                <h1>Stock Market App</h1>
+                <h1 className="text-2xl">Stock Market App</h1>
             </main>
 
         </>
