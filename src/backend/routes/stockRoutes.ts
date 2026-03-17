@@ -1,6 +1,6 @@
 import express from "express"
 import getStockList from "../controllers/getStockList.ts"
 
-export const apiRouter = express.Router()
+export const stocksRouter = express.Router()
 
-apiRouter.get("/", getStockList)
+stocksRouter.get("/", getStockList)

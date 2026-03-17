@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-import { apiRouter } from "./src/backend/routes/apiRoutes.ts"
+import { stocksRouter } from "./src/backend/routes/stockRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
 
@@ -30,7 +30,7 @@ app.use(session({
 
 }))
 
-app.use("/users", apiRouter)
+app.use("/users", stocksRouter)
 
 app.use((req, res) => {
     console.log(req.body)
