@@ -3,7 +3,7 @@ export default function Home() {
         <>
 
             <main
-                className="flex flex-col justify-center items-center"
+                className="flex flex-1 justify-center items-center"
             >
                 <h1>Stock Market App</h1>
             </main>
