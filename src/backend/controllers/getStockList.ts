@@ -7,7 +7,7 @@ export default async function getStockList(req: Request, res: Response) {
         console.log(response.data)
         console.log(req.body)
 
-        // res.status(200).json(response.data)
+        res.status(200).json(response.data)
     } catch (err) {
         res.status(400).send(err)
     }

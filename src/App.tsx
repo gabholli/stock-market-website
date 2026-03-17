@@ -6,6 +6,7 @@ import Data from './pages/data.'
 import WatchList from './pages/watchlist'
 import LogIn from './auth/login'
 import SignUp from './auth/signup'
+import NotFound from './pages/notFound'
 
 export default function App() {
 
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="watchlist" element={<WatchList />} />
         <Route path="login" element={<LogIn />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )
