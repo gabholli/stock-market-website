@@ -30,7 +30,7 @@ app.use(session({
 app.use("/users", apiRouter)
 
 app.use((req, res) => {
-    console.log(req.query)
+    console.log(req.body)
     res.send("Server here...")
 })
 
