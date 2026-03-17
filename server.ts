@@ -8,6 +8,8 @@ import apicache from "apicache"
 const app = express()
 let cache = apicache.middleware
 
+app.use(cache("5 minutes"))
+
 dotenv.config()
 
 const PORT = process.env.PORT || 3000
@@ -32,7 +34,7 @@ app.use(session({
 
 }))
 
-app.use("/stocks", cache("5 minutes"), stocksRouter)
+app.use("/stocks", stocksRouter)
 
 app.use((req, res) => {
     console.log(req.body)
