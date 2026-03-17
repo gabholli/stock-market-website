@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express'
 import { myCache } from "../../../server"
 
-export const getStockList = async (req: Request, res: Response) => {
+export default async function getStockList(req: Request, res: Response) {
     const cached = myCache.get('stockData')
     if (cached) return res.status(200).json(cached)
     console.log(req.query)
