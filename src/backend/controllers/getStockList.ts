@@ -1,14 +1,14 @@
-import axios from "axios";
-import type { Request, Response } from "express";
+import type { Request, Response } from 'express'
+import { myCache } from "../../../server"
 
-export default async function getStockList(req: Request, res: Response) {
-    try {
-        const response = await axios.get(`https://api.twelvedata.com/price?symbol=AAPL&apikey=${process.env.DATA_KEY}`)
-        console.log(response.data)
-        console.log(req.query.symbol)
+export const getStockList = async (req: Request, res: Response) => {
+    const cached = myCache.get('stockData')
+    if (cached) return res.status(200).json(cached)
+    console.log(req.query)
 
-        res.status(200).json(response.data)
-    } catch (err) {
-        res.status(400).send(err)
-    }
-}
+    const response = await fetch(`https://api.twelvedata.com/price?symbol=AAPL&apikey=${process.env.DATA_KEY}`)
+    const data = await response.json()
+
+    myCache.set('stockData', data)
+    return res.status(200).json(data)
+};
