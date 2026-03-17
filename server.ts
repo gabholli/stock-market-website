@@ -30,7 +30,7 @@ app.use(session({
 
 }))
 
-app.use("/users", stocksRouter)
+app.use("/stocks", stocksRouter)
 
 app.use((req, res) => {
     console.log(req.body)
