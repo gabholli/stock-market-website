@@ -4,16 +4,15 @@ import { apiRouter } from "./src/backend/routes/apiRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
 
-
-const PORT = process.env.PORT || 3000
-const secret = process.env.SESSION_SECRET
-if (!secret) {
-    throw new Error("SECRET_KEY environment variable is not set")
-}
-
 const app = express()
 
 dotenv.config()
+
+const PORT = process.env.PORT || 3000
+const secret = process.env.SECRET_KEY
+if (!secret) {
+    throw new Error("SECRET_KEY environment variable is not set")
+}
 
 app.use(cors())
 
