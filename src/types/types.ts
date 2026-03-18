@@ -4,5 +4,6 @@ export interface StockList {
     change: string,
     close: string,
     exchange: string,
-    high: string
+    high: string,
+    low: string
 }
