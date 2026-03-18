@@ -1,3 +1,5 @@
 export interface StockList {
-    price: string
+    symbol: string,
+    change: string,
+    close: string
 }
