@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { cache } from '../cache'
+import { cache } from '../cache.ts'
 
 export default async function getStockList(req: Request, res: Response) {
     const cached = cache.get('stockData')
