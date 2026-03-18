@@ -32,16 +32,16 @@ export default function Data() {
     return (
         <>
             <form className="flex flex-col justify-center items-center gap-y-4 mt-8 mb-1" role="search">
-                < label > Symbol Search</label >
+                <label> Symbol Search</label>
                 <input className="bg-blue-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
                 </input>
             </form >
             <main className="flex flex-col flex-1 items-center text-center gap-y-8 mt-8">
 
-                <section className="flex flex-col gap-y-2 border-black border-2 p-8 shadow-xl">
-                    <h1 className="text-center">{stockInfo?.symbol}</h1>
-                    <p className="underline">{stockInfo?.name}</p>
-                    <div className="flex flex-col text-left gap-y-2">
+                <section className="flex flex-col gap-y-2 text-left p-4 md:p-12 shadow-xl">
+                    <h1 className="text-lg">{stockInfo?.symbol}</h1>
+                    <p className="underline text-lg">{stockInfo?.name}</p>
+                    <div className="flex flex-col gap-y-2">
                         <p>Stock Change: ${parseFloat(stockInfo?.change ?? "N/A").toFixed(2)}</p>
                         <p>Last Closing Price: ${parseFloat(stockInfo?.close ?? "N/A").toFixed(2)}</p>
                         <p>Exchange: {stockInfo?.exchange}</p>

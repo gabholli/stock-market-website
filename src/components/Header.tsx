@@ -3,7 +3,7 @@ import { NavLink } from "react-router"
 export default function Header() {
     return (
         <>
-            <main className="bg-blue-500 text-white flex flex-col lg:flex-row mt-4 md:mt-0 justify-between items-center lg:pl-24">
+            <main className="bg-blue-500 text-white flex flex-col lg:flex-row pt-4 md:mt-0 justify-between items-center lg:pl-24">
                 <section className="lg:p-8 md:pt-6">
                     <h1 className="text-xl md:text-4xl font-extrabold">Stock Pulse</h1>
                 </section>
