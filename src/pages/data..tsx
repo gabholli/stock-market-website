@@ -35,7 +35,7 @@ export default function Data() {
                     <p>Exchange: {stockInfo?.exchange}</p>
                     <p>Highest Price: ${parseFloat(stockInfo?.high ?? "N/A").toFixed(2)}</p>
                     <p>Lowest Price: ${parseFloat(stockInfo?.low ?? "N/A").toFixed(2)}</p>
-
+                    <button className="px-4 py-2 bg-zinc-500 text-white">Add to watch list</button>
                 </section>
             </main>
         </>
