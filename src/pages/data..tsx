@@ -5,26 +5,37 @@ import type { StockList } from "../types/types"
 export default function Data() {
 
     const [stockInfo, setStockInfo] = useState<StockList | null>(null)
+    const [loading, setLoading] = useState<Boolean>(false)
 
     useEffect(() => {
+        setLoading(true)
         async function fetchStocks() {
             const response = await axios.get<StockList>("https://stock-market-website-wq7x.onrender.com/stocks")
             const stockData = response.data
             console.log(stockData)
             setStockInfo(stockData)
+            setLoading(false)
         }
 
         fetchStocks()
 
     }, [])
 
+    if (loading) {
+        return (
+            <div className="flex flex-col flex-1 justify-center items-center text-center">
+                <h1>Loading...</h1>
+            </div>
+        )
+    }
+
     return (
         <>
             <form className="flex flex-col justify-center items-center gap-y-2 mt-8" role="search">
-                <label>Symbol Search</label>
+                < label > Symbol Search</label >
                 <input className="bg-zinc-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
                 </input>
-            </form>
+            </form >
             <main className="flex flex-col flex-1 items-center text-center gap-y-8 mt-8">
 
                 <section className="flex flex-col gap-y-2 border-black border-2 p-4 shadow-md">
