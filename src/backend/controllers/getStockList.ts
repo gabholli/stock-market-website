@@ -6,7 +6,7 @@ export default async function getStockList(req: Request, res: Response) {
     if (cached) return res.status(200).json(cached)
     console.log(req.query)
 
-    const response = await fetch(`https://api.twelvedata.com/price?symbol=AAPL&apikey=${process.env.DATA_KEY}`)
+    const response = await fetch(`https://api.twelvedata.com/quote?symbol=AAPL&apikey=${process.env.DATA_KEY}`)
     const data = await response.json()
 
     cache.set('stockData', data)
