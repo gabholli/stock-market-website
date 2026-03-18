@@ -23,7 +23,6 @@ export default function Header() {
                     </NavLink>
                 </nav>
             </main>
-            <hr></hr>
         </>
     )
 }
