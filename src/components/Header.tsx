@@ -3,21 +3,26 @@ import { NavLink } from "react-router"
 export default function Header() {
     return (
         <>
-            <nav className="flex items-center justify-center lg:justify-end lg:mr-24 gap-x-8 p-4 md:p-8
+            <main className="flex flex-col lg:flex-row mt-4 md:mt-0 justify-between items-center lg:ml-24">
+                <section className="lg:p-8 md:pt-6">
+                    <h1 className="text-xl md:text-4xl font-extrabold">Stock Pulse</h1>
+                </section>
+                <nav className="flex items-center justify-center lg:justify-end lg:mr-24 gap-x-8 p-4 md:p-6 lg:p-8
                 shadow-md md:text-3xl 2xl:text-3xl text-center">
-                <NavLink to="/" end>
-                    Home
-                </NavLink>
-                <NavLink to="data" end>
-                    Data
-                </NavLink>
-                <NavLink to="watchlist" end>
-                    Watch List
-                </NavLink>
-                <NavLink to="login" end>
-                    Log In / Sign Up
-                </NavLink>
-            </nav>
+                    <NavLink to="/" end>
+                        Home
+                    </NavLink>
+                    <NavLink to="data" end>
+                        Data
+                    </NavLink>
+                    <NavLink to="watchlist" end>
+                        Watch List
+                    </NavLink>
+                    <NavLink to="login" end>
+                        Log In / Sign Up
+                    </NavLink>
+                </nav>
+            </main>
             <hr></hr>
         </>
     )
