@@ -33,7 +33,7 @@ export default function Data() {
         <>
             <form className="flex flex-col justify-center items-center gap-y-2 mt-8" role="search">
                 < label > Symbol Search</label >
-                <input className="bg-zinc-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
+                <input className="bg-blue-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
                 </input>
             </form >
             <main className="flex flex-col flex-1 items-center text-center gap-y-8 mt-8">
@@ -46,7 +46,7 @@ export default function Data() {
                     <p>Exchange: {stockInfo?.exchange}</p>
                     <p>Highest Price: ${parseFloat(stockInfo?.high ?? "N/A").toFixed(2)}</p>
                     <p>Lowest Price: ${parseFloat(stockInfo?.low ?? "N/A").toFixed(2)}</p>
-                    <button className="px-4 py-2 bg-zinc-500 text-white">Add to watch list</button>
+                    <button className="px-4 py-2 bg-blue-500 text-white">Add to watch list</button>
                 </section>
             </main>
         </>
