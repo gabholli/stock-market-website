@@ -3,11 +3,8 @@ import cors from "cors"
 import { stocksRouter } from "./src/backend/routes/stockRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
-import NodeCache from "node-cache"
 
 const app = express()
-
-export const myCache = new NodeCache({ stdTTL: 300 })
 
 dotenv.config()
 
