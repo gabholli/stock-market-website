@@ -25,12 +25,17 @@ export default function Data() {
                 <input className="bg-zinc-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
                 </input>
             </form>
-            <main className="flex flex-col flex-1 justify-center items-center text-center gap-y-8">
+            <main className="flex flex-col flex-1 items-center text-center gap-y-8 mt-8">
 
                 <section className="flex flex-col gap-y-2 border-black border-2 p-4 shadow-md">
                     <h1 className="text-center">{stockInfo?.symbol}</h1>
+                    <p className="underline">{stockInfo?.name}</p>
                     <p>Stock Change: ${parseFloat(stockInfo?.change ?? "N/A").toFixed(2)}</p>
                     <p>Last Closing Price: ${parseFloat(stockInfo?.close ?? "N/A").toFixed(2)}</p>
+                    <p>Exchange: {stockInfo?.exchange}</p>
+                    <p>Highest Price: ${parseFloat(stockInfo?.high ?? "N/A").toFixed(2)}</p>
+                    <p>Lowest Price: ${parseFloat(stockInfo?.low ?? "N/A").toFixed(2)}</p>
+
                 </section>
             </main>
         </>
