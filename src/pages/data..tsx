@@ -42,7 +42,11 @@ export default function Data() {
                     <h1 className="text-lg">{stockInfo?.symbol}</h1>
                     <p className="underline text-lg">{stockInfo?.name}</p>
                     <div className="flex flex-col gap-y-2">
-                        <p>Stock Change: ${parseFloat(stockInfo?.change ?? "N/A").toFixed(2)}</p>
+                        {parseInt(stockInfo?.change ?? "0") > 0 ? (
+                            <p>Stock Change: ${parseFloat(stockInfo?.change.substring(1) ?? "N/A").toFixed(2)}</p>
+                        ) :
+                            <p>Stock Change: -${parseFloat(stockInfo?.change.substring(1) ?? "N/A").toFixed(2)}</p>
+                        }
                         <p>Last Closing Price: ${parseFloat(stockInfo?.close ?? "N/A").toFixed(2)}</p>
                         <p>Exchange: {stockInfo?.exchange}</p>
                         <p>Highest Price: ${parseFloat(stockInfo?.high ?? "N/A").toFixed(2)}</p>
