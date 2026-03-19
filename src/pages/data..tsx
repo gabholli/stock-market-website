@@ -38,7 +38,7 @@ export default function Data() {
             </form >
             <main className="flex flex-col flex-1 items-center text-center gap-y-8 mt-8">
 
-                <section className="flex flex-col gap-y-2 text-left p-4 md:p-12 shadow-xl">
+                <section className="bg-white flex flex-col gap-y-2 text-left p-4 md:p-12 shadow-xl">
                     <h1 className="text-lg">{stockInfo?.symbol}</h1>
                     <p className="underline text-lg">{stockInfo?.name}</p>
                     <div className="flex flex-col gap-y-2">
