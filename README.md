@@ -1,5 +1,5 @@
 # Project Title
-Stock Market App
+Stock Pulse
 
 ## Description
 I built this stock market app using the following:
