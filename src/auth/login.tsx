@@ -4,7 +4,9 @@ export default function LogIn() {
     return (
         <main>Login
 
-            <p>No account yet? <Link to="/signup">
+            <p>No account yet? <Link
+                className="text-blue-500"
+                to="/signup">
                 Sign Up
             </Link>
             </p>
