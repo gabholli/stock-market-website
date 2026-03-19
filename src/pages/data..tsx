@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import type { StockList } from "../types/types"
+import Loading from "../components/Loading"
 
 export default function Data() {
 
@@ -22,11 +23,7 @@ export default function Data() {
     }, [])
 
     if (loading) {
-        return (
-            <div className="flex flex-col flex-1 justify-center items-center text-center">
-                <h1>Loading...</h1>
-            </div>
-        )
+        return <Loading />
     }
 
     return (
