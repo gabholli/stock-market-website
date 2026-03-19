@@ -47,10 +47,22 @@ export default function Data() {
                         ) :
                             <p>Stock Change: -${parseFloat(stockInfo?.change.substring(1) ?? "N/A").toFixed(2)}</p>
                         }
-                        <p>Last Closing Price: ${parseFloat(stockInfo?.close ?? "N/A").toFixed(2)}</p>
+                        {parseInt(stockInfo?.close ?? "0") > 0 ? (
+                            <p>Last Closing Price: ${parseFloat(stockInfo?.close.substring(1) ?? "N/A").toFixed(2)}</p>
+                        ) :
+                            <p>Last Closing Price: -${parseFloat(stockInfo?.close.substring(1) ?? "N/A").toFixed(2)}</p>
+                        }
                         <p>Exchange: {stockInfo?.exchange}</p>
-                        <p>Highest Price: ${parseFloat(stockInfo?.high ?? "N/A").toFixed(2)}</p>
-                        <p>Lowest Price: ${parseFloat(stockInfo?.low ?? "N/A").toFixed(2)}</p>
+                        {parseInt(stockInfo?.high ?? "0") > 0 ? (
+                            <p>Highest Price: ${parseFloat(stockInfo?.high.substring(1) ?? "N/A").toFixed(2)}</p>
+                        ) :
+                            <p>Highest Price: -${parseFloat(stockInfo?.high.substring(1) ?? "N/A").toFixed(2)}</p>
+                        }
+                        {parseInt(stockInfo?.low ?? "0") > 0 ? (
+                            <p>Lowest Price: ${parseFloat(stockInfo?.low.substring(1) ?? "N/A").toFixed(2)}</p>
+                        ) :
+                            <p>Lowest Price: -${parseFloat(stockInfo?.low.substring(1) ?? "N/A").toFixed(2)}</p>
+                        }
                     </div>
                     <button className="mt-2 px-4 py-2 bg-blue-500 text-white">Add to watch list</button>
                 </section>
