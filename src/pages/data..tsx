@@ -64,7 +64,7 @@ export default function Data() {
                             <p>Lowest Price: -${parseFloat(stockInfo?.low.substring(1) ?? "N/A").toFixed(2)}</p>
                         }
                     </div>
-                    <button className="mt-2 px-4 py-2 bg-blue-500 text-white">Add to watch list</button>
+                    <button className="mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
                 </section>
             </main>
         </>
