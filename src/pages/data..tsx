@@ -30,8 +30,11 @@ export default function Data() {
         <>
             <form className="flex flex-col justify-center items-center gap-y-4 mt-8 mb-1" role="search">
                 <label> Symbol Search</label>
-                <input className="bg-blue-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
-                </input>
+                <div className="flex flex-col md:flex-row gap-y-4 gap-x-4">
+                    <input className="bg-blue-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
+                    </input>
+                    <button type="submit" className="px-4 py-2 bg-blue-500 text-white cursor-pointer">Search</button>
+                </div>
             </form >
             <main className="flex flex-col flex-1 items-center text-center gap-y-8 mt-8">
 
