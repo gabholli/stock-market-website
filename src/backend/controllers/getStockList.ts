@@ -5,7 +5,7 @@ import axios from 'axios'
 export default async function getStockList(req: Request, res: Response) {
     const cached = cache.get('stockData')
     if (cached) return res.status(200).json(cached)
-    console.log(req.query.symbol)
+    console.log(req.body)
 
     const response = await axios.get(`https://api.twelvedata.com/quote?symbol=MUB&apikey=${process.env.DATA_KEY}`)
     const data = await response.data

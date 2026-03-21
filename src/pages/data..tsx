@@ -30,7 +30,7 @@ export default function Data() {
         <>
             <form
                 className="flex flex-col justify-center items-center gap-y-4 mt-8 mb-1"
-                action="/stocks"
+                action="/data"
                 method="GET"
                 name="symbol"
             >
