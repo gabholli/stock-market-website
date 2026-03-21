@@ -10,7 +10,7 @@ export default function Chart({ timeSeries }: ChartProps) {
                 datetime: item.datetime,
                 low: item.low,
                 high: item.high
-            }))}
+            })).reverse()}
             margin={{
                 top: 5,
                 right: 0,
