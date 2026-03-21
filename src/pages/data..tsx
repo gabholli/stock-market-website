@@ -28,7 +28,12 @@ export default function Data() {
 
     return (
         <>
-            <form className="flex flex-col justify-center items-center gap-y-4 mt-8 mb-1" role="search">
+            <form
+                className="flex flex-col justify-center items-center gap-y-4 mt-8 mb-1"
+                action="/stocks"
+                method="GET"
+                name="symbol"
+            >
                 <label> Symbol Search</label>
                 <div className="flex flex-col md:flex-row gap-y-4 gap-x-4">
                     <input className="bg-blue-500 text-white indent-4 p-2" type="text" placeholder="Enter symbol...">
