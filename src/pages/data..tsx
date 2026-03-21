@@ -74,7 +74,7 @@ export default function Data() {
                 </div>
             </form >
             <main className="flex flex-col flex-1 items-center text-center gap-y-8 mt-8">
-                {stockInfo && timeSeries && (
+                {stockInfo && timeSeries ? (
 
                     <section className="bg-white flex flex-col gap-y-2 text-left p-4 md:p-12 shadow-xl">
                         <h1 className="text-lg">{stockInfo?.symbol}</h1>
@@ -104,7 +104,10 @@ export default function Data() {
                         </div>
                         <button className="mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
                     </section>
-                )}
+                ) :
+                    <h1 className="flex flex-col flex-1 items-center justify-center">Please enter a symbol.</h1>
+
+                }
             </main>
         </>
     )
