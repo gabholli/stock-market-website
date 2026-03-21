@@ -20,6 +20,7 @@ export default function Data() {
         } catch (error) {
             if (error instanceof Error) {
                 console.error(error.message)
+                setLoading(false)
             }
         }
     }
@@ -45,10 +46,6 @@ export default function Data() {
                     setLoading(false)
                 })
             )
-            // const response = await axios.get<StockList>("https://stock-market-website-wq7x.onrender.com/stocks")
-            // const stockData = response.data
-            // console.log(stockData)
-            // setStockInfo(stockData)
         }
 
         fetchStocks()
