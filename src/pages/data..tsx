@@ -60,7 +60,7 @@ export default function Data() {
                 className="flex flex-col justify-center items-center gap-y-4 mt-8 mb-1"
                 action={formAction}
             >
-                <label> Symbol Search</label>
+                <label className="mb-4 mt-2"> Symbol Search</label>
                 <div className="flex flex-col md:flex-row gap-y-4 gap-x-4">
                     <input
                         name="symbolValue"
