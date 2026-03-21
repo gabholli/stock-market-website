@@ -41,6 +41,7 @@ export default function Data() {
 
                     setStockInfo(stockItem)
                     setTimeSeries(timeItem)
+                    console.log(timeSeries)
                     setLoading(false)
                 })
             )
