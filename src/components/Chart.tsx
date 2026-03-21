@@ -23,10 +23,10 @@ export default function Chart({ timeSeries }: ChartProps) {
             <YAxis width="auto" stroke="var(--color-text-3)" />
             <Tooltip
                 cursor={{
-                    stroke: 'var(--color-border-2)',
+                    stroke: '#0000FF',
                 }}
                 contentStyle={{
-                    backgroundColor: 'var(--color-surface-raised)',
+                    backgroundColor: '#ADD8E6',
                     borderColor: 'var(--color-border-2)',
                 }}
             />
@@ -34,18 +34,18 @@ export default function Chart({ timeSeries }: ChartProps) {
             <Line
                 type="monotone"
                 dataKey="high"
-                stroke="var(--color-chart-1)"
+                stroke="#0000FF"
                 dot={{
-                    fill: 'var(--color-surface-base)',
+                    fill: '#0000FF',
                 }}
                 activeDot={{ r: 8, stroke: 'var(--color-surface-base)' }}
             />
             <Line
                 type="monotone"
                 dataKey="low"
-                stroke="var(--color-chart-2)"
+                stroke="#0047AB"
                 dot={{
-                    fill: 'var(--color-surface-base)',
+                    fill: '#0047AB',
                 }}
                 activeDot={{ stroke: 'var(--color-surface-base)' }}
             />
