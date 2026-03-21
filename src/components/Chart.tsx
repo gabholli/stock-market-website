@@ -22,7 +22,7 @@ export default function Chart({ timeSeries }: ChartProps) {
             >
                 <CartesianGrid strokeDasharray="3 3" stroke="#0047AB" />
                 <XAxis dataKey="datetime" stroke="var(--color-text-3)" />
-                <YAxis width="auto" stroke="var(--color-text-3)" />
+                <YAxis width="auto" domain={["auto", "auto"]} stroke="var(--color-text-3)" />
                 <Tooltip
                     cursor={{
                         stroke: '#0000FF',
