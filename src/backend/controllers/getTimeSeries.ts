@@ -6,7 +6,7 @@ export default async function getTimeSeries(req: Request, res: Response) {
     if (cached) return res.status(200).json(cached)
     console.log(req.query)
 
-    const response = await fetch(`https://api.twelvedata.com/time_series?symbol=AAPL&interval=1min&apikey=${process.env.DATA_KEY}`)
+    const response = await fetch(`https://api.twelvedata.com/time_series?symbol=AAPL&interval=1month&apikey=${process.env.DATA_KEY}`)
     const data = await response.json()
 
     cache.set('timeSeries', data)
