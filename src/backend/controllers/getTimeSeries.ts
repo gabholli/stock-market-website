@@ -2,13 +2,17 @@ import type { Request, Response } from 'express'
 import { cache } from '../cache.ts'
 
 export default async function getTimeSeries(req: Request, res: Response) {
-    const cached = cache.get('timeSeries')
-    if (cached) return res.status(200).json(cached)
-    console.log(req.query)
+    const { symbol } = req.query
 
-    const response = await fetch(`https://api.twelvedata.com/time_series?symbol=AAPL&interval=1month&apikey=${process.env.DATA_KEY}`)
+    if (!symbol) return res.status(400).json({ error: "Symbol is required" })
+
+    const cacheKey = `timeSeries_${symbol}`
+    const cached = cache.get(cacheKey)
+    if (cached) return res.status(200).json(cached)
+
+    const response = await fetch(`https://api.twelvedata.com/time_series?symbol=${symbol}&interval=1month&apikey=${process.env.DATA_KEY}`)
     const data = await response.json()
 
-    cache.set('timeSeries', data)
+    cache.set(cacheKey, data)
     return res.status(200).json(data)
 };
