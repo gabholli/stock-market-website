@@ -27,6 +27,8 @@ export default function Chart({ timeSeries }: ChartProps) {
                             <XAxis
                                 dataKey="datetime"
                                 stroke="var(--color-text-3)"
+                                dx={-15}
+                                minTickGap={20}
                             />
                             <YAxis
                                 width="auto"
