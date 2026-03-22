@@ -12,9 +12,9 @@ export default function Chart({ timeSeries }: ChartProps) {
                             // style={{ width: 300, maxWidth: '700px', height: 300, maxHeight: '70vh', aspectRatio: 1.618 }}
                             responsive
                             data={timeSeries?.values?.map(item => ({
-                                datetime: item.datetime,
-                                low: item.low,
-                                high: item.high
+                                datetime: item.datetime.substring(0, 7),
+                                low: parseFloat(item.low).toFixed(2),
+                                high: parseFloat(item.high).toFixed(2)
                             })).reverse() ?? []}
                             margin={{
                                 top: 5,
@@ -24,8 +24,16 @@ export default function Chart({ timeSeries }: ChartProps) {
                             }}
                         >
                             <CartesianGrid strokeDasharray="3 3" stroke="#0047AB" />
-                            <XAxis dataKey="datetime" stroke="var(--color-text-3)" />
-                            <YAxis width="auto" domain={["auto", "auto"]} stroke="var(--color-text-3)" />
+                            <XAxis
+                                dataKey="datetime"
+                                stroke="var(--color-text-3)"
+                            />
+                            <YAxis
+                                width="auto"
+                                domain={["auto", "auto"]}
+                                stroke="var(--color-text-3)"
+                                tickFormatter={v => `$${v}`}
+                            />
                             <Tooltip
                                 cursor={{
                                     stroke: '#0000FF',
@@ -34,6 +42,7 @@ export default function Chart({ timeSeries }: ChartProps) {
                                     backgroundColor: '#ADD8E6',
                                     borderColor: 'var(--color-border-2)',
                                 }}
+                                formatter={v => `$${v}`}
                             />
                             <Legend />
                             <Line
