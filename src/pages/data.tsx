@@ -107,9 +107,11 @@ export default function Data() {
                             <Chart timeSeries={timeSeries} />
                         </section>
                     </>
-                ) :
+                ) : stockInfo && !timeSeries?.values ? (
+                    <h1 className="flex flex-col flex-1 items-center justify-center">Invalid symbol. Please try again</h1>
+                ) : (
                     <h1 className="flex flex-col flex-1 items-center justify-center">Please enter a symbol.</h1>
-
+                )
                 }
 
             </main>
