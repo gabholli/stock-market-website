@@ -64,11 +64,11 @@ export default function Data() {
                 <div className="flex flex-col md:flex-row gap-y-4 gap-x-4">
                     <input
                         name="symbolValue"
-                        className="bg-blue-500 text-white indent-4 p-2"
+                        className="bg-blue-500 text-white indent-4 p-2 rounded-xl"
                         type="text"
                         placeholder="Enter symbol...">
                     </input>
-                    <button type="submit" className="px-4 py-2 bg-blue-500 text-white cursor-pointer">Search</button>
+                    <button type="submit" className="rounded-xl px-4 py-2 bg-blue-500 text-white cursor-pointer">Search</button>
                 </div>
             </form >
             <main className="flex flex-col lg:flex-row flex-1 items-center justify-center text-center lg:gap-x-24 
@@ -101,7 +101,7 @@ export default function Data() {
                                     <p>Lowest Price: -${parseFloat(stockInfo?.low?.substring(1) ?? "N/A").toFixed(2)}</p>
                                 }
                             </div>
-                            <button className="mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
+                            <button className="rounded-xl mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
                         </section>
                         <section>
                             <Chart timeSeries={timeSeries} />
