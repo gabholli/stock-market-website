@@ -11,11 +11,11 @@ export default function Chart({ timeSeries }: ChartProps) {
                         <LineChart
                             // style={{ width: 300, maxWidth: '700px', height: 300, maxHeight: '70vh', aspectRatio: 1.618 }}
                             responsive
-                            data={timeSeries.values.map(item => ({
+                            data={timeSeries?.values?.map(item => ({
                                 datetime: item.datetime,
                                 low: item.low,
                                 high: item.high
-                            })).reverse()}
+                            })).reverse() ?? []}
                             margin={{
                                 top: 5,
                                 right: 0,
