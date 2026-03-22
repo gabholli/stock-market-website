@@ -73,7 +73,7 @@ export default function Data() {
             </form >
             <main className="flex flex-col lg:flex-row flex-1 items-center justify-center text-center lg:gap-x-24 
                 gap-y-8 mt-8 p-4">
-                {stockInfo && timeSeries ? (
+                {stockInfo && timeSeries && timeSeries.values ? (
                     <>
                         <section className="bg-white flex flex-col gap-y-2 text-left p-4 md:p-12 shadow-xl">
                             <h1 className="text-lg">{stockInfo?.symbol}</h1>
