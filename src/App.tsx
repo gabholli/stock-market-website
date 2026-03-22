@@ -2,7 +2,7 @@ import './App.css'
 import { Routes, Route } from "react-router"
 import Home from './pages/home'
 import SiteLayout from './components/SiteLayout'
-import Data from './pages/data.'
+import Data from './pages/data'
 import WatchList from './pages/watchlist'
 import LogIn from './auth/login'
 import SignUp from './auth/signup'
