@@ -7,7 +7,7 @@ export default function Chart({ timeSeries }: ChartProps) {
             <h1 className='mb-6'>Price Trends</h1>
             <div className='w-96 px-12 md:px-0'>
                 <div className='h-full w-full'>
-                    <ResponsiveContainer width="100%" height={450}>
+                    <ResponsiveContainer width="100%" height={400}>
                         <LineChart
                             // style={{ width: 300, maxWidth: '700px', height: 300, maxHeight: '70vh', aspectRatio: 1.618 }}
                             responsive
@@ -57,7 +57,7 @@ export default function Chart({ timeSeries }: ChartProps) {
                         </LineChart>
                     </ResponsiveContainer>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
