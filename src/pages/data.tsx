@@ -66,7 +66,7 @@ export default function Data() {
                         name="symbolValue"
                         className="bg-blue-500 text-white indent-4 p-2 rounded-xl"
                         type="text"
-                        placeholder="Enter symbol...">
+                        placeholder="e.g., AAPL">
                     </input>
                     <button type="submit" className="rounded-xl px-4 py-2 bg-blue-500 text-white cursor-pointer">Search</button>
                 </div>
