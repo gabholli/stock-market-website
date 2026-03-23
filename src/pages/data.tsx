@@ -9,7 +9,7 @@ export default function Data() {
     const [stockInfo, setStockInfo] = useState<StockList | null>(null)
     const [timeSeries, setTimeSeries] = useState<TimeSeries | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
-    const [symbol, setSymbol] = useState("")
+    const [symbol, setSymbol] = useState<string>("")
 
     function formAction(formData: FormData) {
         try {
