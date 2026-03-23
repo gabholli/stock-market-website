@@ -1,6 +1,6 @@
 export default function Loading() {
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col flex-1 justify-center items-center text-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path
                     fill="currentColor"
