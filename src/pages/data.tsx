@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import type { StockList, TimeSeries } from "../types/types"
 import Loading from "../components/Loading"
 import Chart from "../components/Chart"
+import toast from "react-hot-toast"
 
 export default function Data() {
 
@@ -26,8 +27,17 @@ export default function Data() {
     }
 
     function handleAddClick() {
-        const symbolName = stockInfo?.symbol
-        console.log(symbolName)
+        try {
+            const symbolName = stockInfo?.symbol
+            console.log(symbolName)
+            toast.success("Item added to watchlist")
+        } catch (error) {
+            if (error instanceof Error) {
+                console.error(error.message)
+                toast.error("Error adding to watchlist")
+            }
+        }
+
     }
 
     useEffect(() => {
