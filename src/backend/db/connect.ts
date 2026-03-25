@@ -1,11 +1,11 @@
-import { MongoClient } from "mongodb";
-const connectionString = process.env.ATLAS_URI || "";
-const client = new MongoClient(connectionString);
+import { MongoClient } from "mongodb"
+const connectionString = process.env.ATLAS_URI || ""
+const client = new MongoClient(connectionString)
 let conn: any
 try {
-    conn = await client.connect();
+    conn = await client.connect()
 } catch (e) {
-    console.error(e);
+    console.error(e)
 }
-let db = conn.db("stock_pulse");
-export default db;
+let db = conn.db("stock_pulse")
+export default db
