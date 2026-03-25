@@ -6,13 +6,11 @@ import dotenv from "dotenv"
 import { watchListRouter } from "./src/backend/routes/watchListRouter.ts"
 import getDBConnection from "./src/backend/db/connect.ts"
 
-dotenv.config()
-
 const app = express()
-
 
 getDBConnection()
 
+dotenv.config()
 
 const PORT = process.env.PORT || 3000
 const secret = process.env.SECRET_KEY
