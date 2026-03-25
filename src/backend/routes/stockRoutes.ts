@@ -1,6 +1,5 @@
 import express from "express"
-import getStockList from "../controllers/getStockList.ts"
-import getTimeSeries from "../controllers/getTimeSeries.ts"
+import { getStockList, getTimeSeries } from "../controllers/stockController.ts"
 
 export const stocksRouter = express.Router()
 

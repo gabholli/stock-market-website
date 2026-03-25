@@ -3,10 +3,16 @@ import cors from "cors"
 import { stocksRouter } from "./src/backend/routes/stockRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
+import { watchListRouter } from "./src/backend/routes/watchListRouter.ts"
+import getDBConnection from "./src/backend/db/connect.ts"
+
+dotenv.config()
 
 const app = express()
 
-dotenv.config()
+
+getDBConnection()
+
 
 const PORT = process.env.PORT || 3000
 const secret = process.env.SECRET_KEY
@@ -33,6 +39,7 @@ app.use(session({
 }))
 
 app.use("/stocks", stocksRouter)
+app.use("/watchlist", watchListRouter)
 
 app.use((req, res) => {
     console.log(req.body)
