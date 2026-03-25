@@ -4,11 +4,9 @@ import { stocksRouter } from "./src/backend/routes/stockRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
 import { watchListRouter } from "./src/backend/routes/watchListRouter.ts"
-import getDBConnection from "./src/backend/db/connect.ts"
 
 const app = express()
 
-getDBConnection()
 
 dotenv.config()
 
