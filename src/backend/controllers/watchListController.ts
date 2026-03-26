@@ -1,5 +1,5 @@
 import type { Request, Response } from "express"
-import db from "../db/connect"
+import db from "../db/connect.ts"
 
 export async function addToWatchLIst(req: Request, res: Response) {
     let watchlist = await db.collection("watchilst")
