@@ -28,9 +28,7 @@ export default function Data() {
 
     function handleAddClick() {
         try {
-            const symbolName = stockInfo?.symbol
-            console.log(symbolName)
-            axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", { symbol: symbolName })
+            axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", { symbol: stockInfo?.symbol })
                 .then(response => response.data)
             toast.success("Item added to watchlist")
         } catch (error) {
