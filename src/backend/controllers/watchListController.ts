@@ -18,7 +18,6 @@ export async function addToWatchLIst(req: Request, res: Response) {
         },
         { upsert: true }
     )
-    res.status(200).json({
-        inserted: result.upsertedCount > 0
-    })
+
+    res.send(result).status(204)
 }
