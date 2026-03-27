@@ -10,7 +10,6 @@ export default function WatchList() {
         setLoading(true)
         axios.get("https://stock-market-website-wq7x.onrender.com/watchlist/all")
             .then(response => {
-                console.log(response.data)
                 setWatchlist(response.data)
                 setLoading(false)
             })
