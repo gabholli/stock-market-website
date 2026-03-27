@@ -6,6 +6,15 @@ export async function addToWatchLIst(req: Request, res: Response) {
 
     let watchlist = await db.collection("watchlist")
 
-    let result = await watchlist.insertOne({ symbol, symbolName, exchange })
+    let result = await watchlist.updateOne(
+        {
+            $set: {
+                symbol,
+                symbolName,
+                exchange
+            }
+        },
+        { upsert: true }
+    )
     res.send(result).status(204)
 }
