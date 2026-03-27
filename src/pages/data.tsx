@@ -30,7 +30,7 @@ export default function Data() {
         try {
             axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
                 symbol: stockInfo?.symbol,
-                symbolNameL: stockInfo?.name,
+                symbolName: stockInfo?.name,
                 exchange: stockInfo?.exchange
             })
                 .then(response => response.data)
