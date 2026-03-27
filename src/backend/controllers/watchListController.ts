@@ -18,4 +18,6 @@ export async function addToWatchLIst(req: Request, res: Response) {
         },
         { upsert: true }
     )
+
+    res.send(result).status(204)
 }
