@@ -16,7 +16,7 @@ export default function Data() {
         try {
             let value = formData.get("symbolValue") as string
             if (!value) return
-            setSymbol(value)
+            setSymbol(value.toUpperCase())
 
         } catch (error) {
             if (error instanceof Error) {
@@ -28,7 +28,11 @@ export default function Data() {
 
     function handleAddClick() {
         try {
-            axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", { symbol: stockInfo?.symbol })
+            axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
+                symbol: stockInfo?.symbol,
+                symbolNameL: stockInfo?.name,
+                exchange: stockInfo?.exchange
+            })
                 .then(response => response.data)
             toast.success("Item added to watchlist")
         } catch (error) {
