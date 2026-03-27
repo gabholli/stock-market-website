@@ -22,3 +22,10 @@ export async function addToWatchLIst(req: Request, res: Response) {
         inserted: result.upsertedCount > 0
     })
 }
+
+export async function getAll(res: Response) {
+    let collection = await db.collection("watchlist")
+    let results = await collection.find({})
+        .toArray()
+    res.send(results).status(200)
+}
