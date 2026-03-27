@@ -26,18 +26,14 @@ export default function Data() {
         }
     }
 
-    async function handleAddClick() {
+    function handleAddClick() {
         try {
-            const response = await axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
+            axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
                 symbol: stockInfo?.symbol,
                 symbolName: stockInfo?.name,
                 exchange: stockInfo?.exchange
             })
-            if (response.data.inserted) {
-                toast.success(`${stockInfo?.symbol} added to watchlist`)
-            } else {
-                toast.error(`${stockInfo?.symbol} is already in your watchlist`)
-            }
+            toast.success(`${stockInfo?.symbol} now in watchlist`)
 
         } catch (error) {
             if (error instanceof Error) {
