@@ -23,7 +23,7 @@ export async function addToWatchLIst(req: Request, res: Response) {
     })
 }
 
-export async function getAll(res: Response) {
+export async function getAll(_req: Request, res: Response) {
     let collection = await db.collection("watchlist")
     let results = await collection.find({})
         .toArray()
