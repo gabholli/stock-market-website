@@ -12,6 +12,7 @@ export async function addToWatchLIst(req: Request, res: Response) {
         },
         {
             $set: {
+                symbol,
                 symbolName,
                 exchange
             }
