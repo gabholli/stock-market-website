@@ -34,7 +34,7 @@ export default function Data() {
                 exchange: stockInfo?.exchange
             })
             if (response.data.inserted) {
-                toast.success("Item added to watchlist")
+                toast.success(`${stockInfo?.symbol} added to watchlist`)
             } else {
                 toast.error(`${stockInfo?.symbol} is already in your watchlist`)
             }
