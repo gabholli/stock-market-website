@@ -26,7 +26,6 @@ export default function WatchList() {
         return <Loading />
     }
 
-    console.log(watchlist)
     const watchlistMap = watchlist.sort((a, b) => a.symbol.localeCompare(b.symbol))?.map(item => {
         return (
             <section
