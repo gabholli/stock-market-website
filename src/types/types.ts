@@ -19,3 +19,10 @@ export interface TimeSeries {
 export interface ChartProps {
     timeSeries: TimeSeries
 }
+
+export interface Watchlist {
+    _id: string,
+    symbol: string,
+    exchange: string,
+    symbolName: string
+}
