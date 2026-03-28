@@ -69,7 +69,7 @@ export default function WatchList() {
             )}
             {/* {!session && (
                 <div className='flex justify-center items-center text-3xl text-center'>
-                    <p>Log in to store your favorite recipes!</p>
+                    <p>Log in to store your favorite stocks!</p>
                 </div>
             )} */}
         </>
