@@ -93,7 +93,7 @@ export default function Data() {
                         type="text"
                         placeholder="e.g., AAPL">
                     </input>
-                    <button type="submit" className="rounded-xl px-4 py-2 bg-blue-500 text-white cursor-pointer">Search</button>
+                    <button type="submit" className="hover:bg-blue-400 rounded-xl px-4 py-2 bg-blue-500 text-white cursor-pointer">Search</button>
                 </div>
             </form >
             <main className="flex flex-col lg:flex-row flex-1 items-center justify-center text-center lg:gap-x-24 
@@ -126,7 +126,7 @@ export default function Data() {
                                     <p>Lowest Price: -${parseFloat(stockInfo?.low?.substring(1) ?? "N/A").toFixed(2)}</p>
                                 }
                             </div>
-                            <button onClick={handleAddClick} className="rounded-xl mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
+                            <button onClick={handleAddClick} className="hover:bg-blue-400 rounded-xl mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
                         </section>
                         <section>
                             <Chart timeSeries={timeSeries} />
