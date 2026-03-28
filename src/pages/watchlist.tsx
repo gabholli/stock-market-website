@@ -50,10 +50,29 @@ export default function WatchList() {
     })
 
     return (
-        <main
-            className="flex flex-wrap flex-1 justify-center items-center
+        <>
+            {watchlistMap.length > 0 && (
+
+                <main
+                    className="flex flex-wrap flex-1 justify-center items-center
                 gap-4 my-4">
-            {watchlistMap}
-        </main>
+
+                    {watchlistMap}
+
+                </main>
+            )}
+            {watchlistMap.length === 0 && (
+                <main
+                    className="flex flex-wrap flex-1 justify-center items-center
+                gap-4 my-4">
+                    Add from within website to store stocks!
+                </main>
+            )}
+            {/* {!session && (
+                <div className='flex justify-center items-center text-3xl text-center'>
+                    <p>Log in to store your favorite recipes!</p>
+                </div>
+            )} */}
+        </>
     )
 }
