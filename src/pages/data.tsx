@@ -4,13 +4,15 @@ import type { StockList, TimeSeries } from "../types/types"
 import Loading from "../components/Loading"
 import Chart from "../components/Chart"
 import toast from "react-hot-toast"
+import { useLocation } from "react-router"
 
 export default function Data() {
 
+    const watchListSymbolData = useLocation()
     const [stockInfo, setStockInfo] = useState<StockList | null>(null)
     const [timeSeries, setTimeSeries] = useState<TimeSeries | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
-    const [symbol, setSymbol] = useState<string>("")
+    const [symbol, setSymbol] = useState<string>((watchListSymbolData.state as string) || "")
 
     function formAction(formData: FormData) {
         try {
