@@ -8,7 +8,7 @@ export async function addToWatchLIst(req: Request, res: Response) {
 
     let result = await watchlist.updateOne(
         {
-            symbol
+            symbol,
         },
         {
             $set: {

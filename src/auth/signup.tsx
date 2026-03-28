@@ -1,10 +1,35 @@
-import { Link } from "react-router";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router";
 
 export default function SignUp() {
+
+    const navigate = useNavigate()
+
+    function signUpSubmit(formData: FormData) {
+        try {
+            let email = formData.get("email") as string
+            let password = formData.get("password") as string
+            if (!email || !password) return
+            console.log(email)
+            console.log(password)
+            toast.success("You are signed up!")
+            navigate("/")
+
+        } catch (error) {
+            if (error instanceof Error) {
+                console.error(error.message)
+                toast.error("Error signing up.")
+            }
+        }
+    }
+
     return (
         <main className="flex flex-1 justify-center items-center">
-            <form className="max-w-md m-auto p-4 md:p-20 flex flex-col gap-y-4 justify-center items-center">
-                <h2 className="font-bold">Sign In</h2>
+            <form
+                className="max-w-md m-auto p-4 md:p-20 flex flex-col gap-y-4 justify-center items-center"
+                action={signUpSubmit}
+            >
+                <h2 className="font-bold">Sign Up</h2>
                 <div className="flex flex-col py-4">
                     <input
                         className="bg-blue-500 text-white indent-4 p-2 rounded-xl"
