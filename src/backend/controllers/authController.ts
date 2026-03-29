@@ -21,7 +21,6 @@ export async function registerUser(req: Request, res: Response) {
         let users = await db.collection("users")
         let result = await users
             .findOne({ email, password })
-            .toArray()
 
         if (result) {
             return res.status(400).json({ error: "Email or password already in use." })
