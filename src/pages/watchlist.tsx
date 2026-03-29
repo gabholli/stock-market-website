@@ -3,9 +3,11 @@ import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
 import type { Watchlist } from "../types/types"
 import { useNavigate } from "react-router"
+import { checkAuth } from "../utils/checkAuth"
 
 export default function WatchList() {
     let navigate = useNavigate()
+
 
     const [watchlist, setWatchlist] = useState<Watchlist[]>([])
     const [loading, setLoading] = useState<boolean>(false)
@@ -25,21 +27,11 @@ export default function WatchList() {
     }, [])
 
     useEffect(() => {
-        async function checkLoggedIn() {
-            try {
-                const response = await axios.get("https://stock-market-website-wq7x.onrender.com/watchlist/auth/me",
-                    { withCredentials: true }
-                )
-                setLoggedIn(response.data.isLoggedIn)
-
-            } catch (error) {
-                setLoggedIn(false)
-            }
-
+        async function isSignedIn() {
+            const checkAuthValue = await checkAuth()
+            setLoggedIn(checkAuthValue)
         }
-
-        checkLoggedIn()
-
+        isSignedIn()
     }, [])
 
     if (loading) {
@@ -70,7 +62,7 @@ export default function WatchList() {
 
     return (
         <>
-            {watchlistMap.length > 0 && (
+            {loggedIn && watchlistMap.length > 0 && (
 
                 <main
                     className="flex flex-wrap flex-1 justify-center items-center
@@ -80,7 +72,7 @@ export default function WatchList() {
 
                 </main>
             )}
-            {watchlistMap.length === 0 && (
+            {loggedIn && watchlistMap.length === 0 && (
                 <main
                     className="flex flex-wrap flex-1 justify-center items-center
                 gap-4 my-4">

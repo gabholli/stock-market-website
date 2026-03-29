@@ -1,13 +1,10 @@
+import axios from "axios"
+
 export async function checkAuth() {
     try {
-        const res = await fetch('/api/auth/me')
+        const res = await axios.get("https://stock-market-website-wq7x.onrender.com/auth/me")
 
-        if (!res.ok) {
-            console.warn('Unexpected response:', res.status)
-            return false
-        }
-
-        const user = await res.json()
+        const user = res.data
         if (!user.isLoggedIn) {
             return false
         }
