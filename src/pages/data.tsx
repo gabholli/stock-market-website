@@ -15,7 +15,7 @@ export default function Data() {
     const [loading, setLoading] = useState<boolean>(false)
     const [symbol, setSymbol] = useState<string>((watchListSymbolData.state as string) || "")
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
-
+    console.log(loggedIn)
     useEffect(() => {
         async function isSignedIn() {
             const checkAuthValue = await checkAuth()
