@@ -38,6 +38,10 @@ export default function WatchList() {
         return <Loading />
     }
 
+    function handleDelete(symbol: string) {
+        console.log(symbol)
+    }
+
     const watchlistMap = watchlist.sort((a, b) => a.symbol.localeCompare(b.symbol))?.map(item => {
         return (
             <section
@@ -54,11 +58,13 @@ export default function WatchList() {
                     <p>{item.exchange}</p>
                 </div>
                 <button
+                    onClick={() => handleDelete(item.symbol)}
                     className="self-end rounded-xl px-4 py-2 bg-blue-500 text-white cursor-pointer hover:bg-blue-400"
                 >Remove</button>
-            </section>
+            </section >
         )
     })
+
 
     return (
         <>

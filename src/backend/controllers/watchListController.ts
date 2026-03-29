@@ -38,5 +38,12 @@ export async function getAll(req: Request, res: Response) {
     let results = await collection
         .find({ userId })
         .toArray()
-    res.send(results).status(200)
+    res.status(200).json(results)
+}
+
+export async function deleteWatchlistItem(req: Request, res: Response) {
+    const query = { symbol: req.params.symbol }
+    const collection = db.collection("watchlist")
+    let result = await collection.deleteOne(query)
+    res.status(200).json(result)
 }
