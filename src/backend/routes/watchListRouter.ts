@@ -6,4 +6,4 @@ export const watchListRouter = express.Router()
 
 watchListRouter.post("/", requireAuth, addToWatchLIst)
 watchListRouter.get("/all", getAll)
-watchListRouter.delete("/:symbol", requireAuth, deleteWatchlistItem)
+watchListRouter.delete("/:symbol", deleteWatchlistItem)

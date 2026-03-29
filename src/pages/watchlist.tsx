@@ -39,7 +39,9 @@ export default function WatchList() {
     }
 
     function handleDelete(symbol: string) {
-        console.log(symbol)
+        axios.delete(`https://stock-market-website-wq7x.onrender.com/watchlist/${symbol}`)
+            .then(response => console.log(response))
+            .catch(error => console.error(error))
     }
 
     const watchlistMap = watchlist.sort((a, b) => a.symbol.localeCompare(b.symbol))?.map(item => {
@@ -68,7 +70,7 @@ export default function WatchList() {
 
     return (
         <>
-            {!loggedIn ? (
+            {/* {!loggedIn ? (
                 <div className='flex flex-1 justify-center items-center text-3xl text-center'>
                     <p>Log in to store your favorite stocks!</p>
                 </div>
@@ -84,7 +86,12 @@ export default function WatchList() {
                 gap-4 my-4">
                     Add from within website to store stocks!
                 </main>
-            )}
+            )} */}
+            <main
+                className="flex flex-wrap flex-1 justify-center items-center
+                gap-4 my-4">
+                {watchlistMap}
+            </main>
         </>
     )
 }
