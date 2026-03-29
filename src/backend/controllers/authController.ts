@@ -1,7 +1,7 @@
 import type { Request, Response } from "express"
 import validator from 'validator'
 import bcrypt from 'bcryptjs'
-import db from "../db/connect"
+import db from "../db/connect.ts"
 
 export async function registerUser(req: Request, res: Response) {
     let { email, password } = req.body
