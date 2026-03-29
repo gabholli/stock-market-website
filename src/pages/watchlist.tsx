@@ -67,11 +67,6 @@ export default function WatchList() {
                     Add from within website to store stocks!
                 </main>
             )}
-            {/* {!session && (
-                <div className='flex justify-center items-center text-3xl text-center'>
-                    <p>Log in to store your favorite stocks!</p>
-                </div>
-            )} */}
         </>
     )
 }
