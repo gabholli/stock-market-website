@@ -53,7 +53,7 @@ export default function WatchList() {
 
     }
 
-    const watchlistMap = watchlist.sort((a, b) => a.symbol.localeCompare(b.symbol))?.map(item => {
+    const watchlistMap = Array.isArray(watchlist) ? watchlist.sort((a, b) => a.symbol.localeCompare(b.symbol))?.map(item => {
         return (
             <section
                 key={item._id}
@@ -74,7 +74,7 @@ export default function WatchList() {
                 >Remove</button>
             </section >
         )
-    })
+    }) : []
 
 
     return (
