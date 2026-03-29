@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
 import { checkAuth } from "../utils/checkAuth"
-import { log } from "console"
 
 export default function Header() {
 
