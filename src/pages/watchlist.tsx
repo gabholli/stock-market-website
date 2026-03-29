@@ -3,9 +3,13 @@ import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
 import type { Watchlist } from "../types/types"
 import { useNavigate } from "react-router"
+import { checkAuth } from "../utils/checkAuth"
 
-export default function WatchList() {
+export default async function WatchList() {
     let navigate = useNavigate()
+
+    const checkAuthValue = await checkAuth()
+
     const [watchlist, setWatchlist] = useState<Watchlist[]>([])
     const [loading, setLoading] = useState<boolean>(false)
 
@@ -66,6 +70,11 @@ export default function WatchList() {
                 gap-4 my-4">
                     Add from within website to store stocks!
                 </main>
+            )}
+            {!checkAuthValue && (
+                <div className='flex justify-center items-center text-3xl text-center'>
+                    <p>Log in to store your favorite stocks!</p>
+                </div>
             )}
         </>
     )
