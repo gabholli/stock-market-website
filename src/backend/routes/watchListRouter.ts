@@ -1,7 +1,8 @@
 import express from "express"
 import { addToWatchLIst, getAll } from "../controllers/watchListController.ts"
+import requireAuth from "../middleware/requireAuth.ts"
 
 export const watchListRouter = express.Router()
 
-watchListRouter.post("/", addToWatchLIst)
-watchListRouter.get("/all", getAll)
+watchListRouter.post("/", requireAuth, addToWatchLIst)
+watchListRouter.get("/all", requireAuth, getAll)
