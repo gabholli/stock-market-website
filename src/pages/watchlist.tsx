@@ -43,7 +43,7 @@ export default function WatchList() {
         axios.delete(`https://stock-market-website-wq7x.onrender.com/watchlist/${symbol}`)
             .then(response => {
                 console.log(response.data)
-                setWatchlist(response.data)
+                setWatchlist(prev => prev.filter(item => item.symbol !== symbol))
                 toast.success("Stock deleted!")
             })
             .catch(error => {
