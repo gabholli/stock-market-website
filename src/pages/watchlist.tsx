@@ -3,12 +3,9 @@ import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
 import type { Watchlist } from "../types/types"
 import { useNavigate } from "react-router"
-import { checkAuth } from "../utils/checkAuth"
 
-export default async function WatchList() {
+export default function WatchList() {
     let navigate = useNavigate()
-
-    const checkAuthValue = await checkAuth()
 
     const [watchlist, setWatchlist] = useState<Watchlist[]>([])
     const [loading, setLoading] = useState<boolean>(false)
