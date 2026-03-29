@@ -20,7 +20,7 @@ export async function registerUser(req: Request, res: Response) {
     try {
         let users = await db.collection("users")
         let result = await users
-            .find({ email, password })
+            .findOne({ email, password })
             .toArray()
 
         if (result) {
