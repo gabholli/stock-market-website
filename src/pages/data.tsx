@@ -58,6 +58,7 @@ export default function Data() {
         } catch (error) {
             if (error instanceof Error) {
                 console.error(error.message)
+                toast.error("Error finding symbol. Please try again.")
                 setLoading(false)
             }
         }
@@ -75,15 +76,15 @@ export default function Data() {
                 exchange: stockInfo?.exchange
             })
             if (response.data.inserted) {
-                toast.success(`${stockInfo?.symbol} added to watchlist`)
+                toast.success(`${stockInfo?.symbol} added to watchlist.`)
             } else {
-                toast.error(`${stockInfo?.symbol} is already in your watchlist`)
+                toast.error(`${stockInfo?.symbol} is already in your watchlist.`)
             }
 
         } catch (error) {
             if (error instanceof Error) {
                 console.error(error.message)
-                toast.error("Error adding to watchlist")
+                toast.error("Error adding to watchlist.")
             }
         }
 

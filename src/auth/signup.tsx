@@ -22,7 +22,7 @@ export default function SignUp() {
         } catch (error) {
             if (error instanceof Error) {
                 console.error(error.message)
-                toast.error("Error signing up.")
+                toast.error("Error signing up. Please try again.")
             }
         }
     }

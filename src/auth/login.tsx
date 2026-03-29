@@ -23,7 +23,7 @@ export default function LogIn() {
         } catch (error) {
             if (error instanceof Error) {
                 console.error(error.message)
-                toast.error("Error logging in.")
+                toast.error("Error logging in. Please try again.")
             }
         }
     }
