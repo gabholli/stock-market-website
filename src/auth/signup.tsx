@@ -14,8 +14,6 @@ export default function SignUp() {
             axios.post("https://stock-market-website-wq7x.onrender.com/auth/register",
                 { email: emailValue, password: passwordValue }
             )
-            console.log(emailValue)
-            console.log(passwordValue)
             toast.success("You are signed up!")
             navigate("/")
 
