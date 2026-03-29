@@ -12,6 +12,7 @@ export default async function WatchList() {
 
     const [watchlist, setWatchlist] = useState<Watchlist[]>([])
     const [loading, setLoading] = useState<boolean>(false)
+    const [loggedIn, setLoggedIn] = useState<boolean>(false)
 
     useEffect(() => {
         setLoading(true)
@@ -24,6 +25,24 @@ export default async function WatchList() {
                 console.log(error)
                 setLoading(false)
             })
+    }, [])
+
+    useEffect(() => {
+        async function checkLoggedIn() {
+            try {
+                const response = await axios.get("https://stock-market-website-wq7x.onrender.com/watchlist/auth/me",
+                    { withCredentials: true }
+                )
+                setLoggedIn(response.data.isLoggedIn)
+
+            } catch (error) {
+                setLoggedIn(false)
+            }
+
+        }
+
+        checkLoggedIn()
+
     }, [])
 
     if (loading) {
@@ -71,7 +90,7 @@ export default async function WatchList() {
                     Add from within website to store stocks!
                 </main>
             )}
-            {!checkAuthValue && (
+            {!loggedIn && (
                 <div className='flex justify-center items-center text-3xl text-center'>
                     <p>Log in to store your favorite stocks!</p>
                 </div>
