@@ -84,7 +84,7 @@ export default function Data() {
         } catch (error) {
             if (error instanceof Error) {
                 console.error(error.message)
-                toast.error("Error adding to watchlist.")
+                toast.error("Error adding to watchlist. Please ensure you are logged in.")
             }
         }
 
