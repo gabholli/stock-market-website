@@ -5,6 +5,7 @@ import Loading from "../components/Loading"
 import Chart from "../components/Chart"
 import toast from "react-hot-toast"
 import { useLocation } from "react-router"
+import { checkAuth } from "../utils/checkAuth"
 
 export default function Data() {
 
@@ -13,42 +14,15 @@ export default function Data() {
     const [timeSeries, setTimeSeries] = useState<TimeSeries | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
     const [symbol, setSymbol] = useState<string>((watchListSymbolData.state as string) || "")
+    const [loggedIn, setLoggedIn] = useState<boolean>(false)
 
-    function formAction(formData: FormData) {
-        try {
-            let value = formData.get("symbolValue") as string
-            if (!value) return
-            setSymbol(value.toUpperCase())
-
-        } catch (error) {
-            if (error instanceof Error) {
-                console.error(error.message)
-                setLoading(false)
-            }
+    useEffect(() => {
+        async function isSignedIn() {
+            const checkAuthValue = await checkAuth()
+            setLoggedIn(checkAuthValue)
         }
-    }
-
-    async function handleAddClick() {
-        try {
-            const response = await axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
-                symbol: stockInfo?.symbol,
-                symbolName: stockInfo?.name,
-                exchange: stockInfo?.exchange
-            })
-            if (response.data.inserted) {
-                toast.success(`${stockInfo?.symbol} added to watchlist`)
-            } else {
-                toast.error(`${stockInfo?.symbol} is already in your watchlist`)
-            }
-
-        } catch (error) {
-            if (error instanceof Error) {
-                console.error(error.message)
-                toast.error("Error adding to watchlist")
-            }
-        }
-
-    }
+        isSignedIn()
+    }, [])
 
     useEffect(() => {
         if (!symbol) return
@@ -74,6 +48,46 @@ export default function Data() {
         fetchStocks()
 
     }, [symbol])
+
+    function formAction(formData: FormData) {
+        try {
+            let value = formData.get("symbolValue") as string
+            if (!value) return
+            setSymbol(value.toUpperCase())
+
+        } catch (error) {
+            if (error instanceof Error) {
+                console.error(error.message)
+                setLoading(false)
+            }
+        }
+    }
+
+    async function handleAddClick() {
+        try {
+            if (!loggedIn) {
+                toast.error("Please log in to save stocks to watchlist")
+                return
+            }
+            const response = await axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
+                symbol: stockInfo?.symbol,
+                symbolName: stockInfo?.name,
+                exchange: stockInfo?.exchange
+            })
+            if (response.data.inserted) {
+                toast.success(`${stockInfo?.symbol} added to watchlist`)
+            } else {
+                toast.error(`${stockInfo?.symbol} is already in your watchlist`)
+            }
+
+        } catch (error) {
+            if (error instanceof Error) {
+                console.error(error.message)
+                toast.error("Error adding to watchlist")
+            }
+        }
+
+    }
 
     if (loading) {
         return <Loading />
