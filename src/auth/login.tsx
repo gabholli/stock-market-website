@@ -15,8 +15,6 @@ export default function LogIn() {
             axios.post("https://stock-market-website-wq7x.onrender.com/auth/login",
                 { email: emailValue, password: passwordValue }
             )
-            console.log(emailValue)
-            console.log(passwordValue)
             toast.success("You are logged in!")
             navigate("/")
 
