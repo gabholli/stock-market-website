@@ -4,6 +4,7 @@ import Loading from "../components/Loading"
 import type { Watchlist } from "../types/types"
 import { useNavigate } from "react-router"
 import { checkAuth } from "../utils/checkAuth"
+import toast from "react-hot-toast"
 
 export default function WatchList() {
     let navigate = useNavigate()
@@ -43,8 +44,13 @@ export default function WatchList() {
             .then(response => {
                 console.log(response.data)
                 setWatchlist(response.data)
+                toast.success("Stock deleted!")
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                toast.error("Error deleting stock.")
+            })
+
     }
 
     const watchlistMap = watchlist.sort((a, b) => a.symbol.localeCompare(b.symbol))?.map(item => {
