@@ -32,7 +32,7 @@ export async function addToWatchLIst(req: Request, res: Response) {
     })
 }
 
-export async function getAll(_req: Request, res: Response) {
+export async function getAll(req: Request, res: Response) {
     const userId = req.session.userID
     let collection = await db.collection("watchlist")
     let results = await collection.find({})
