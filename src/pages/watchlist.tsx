@@ -9,7 +9,6 @@ import toast from "react-hot-toast"
 export default function WatchList() {
     let navigate = useNavigate()
 
-
     const [watchlist, setWatchlist] = useState<Watchlist[]>([])
     const [loading, setLoading] = useState<boolean>(false)
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
@@ -79,7 +78,7 @@ export default function WatchList() {
 
     return (
         <>
-            {/* {!loggedIn ? (
+            {!loggedIn ? (
                 <div className='flex flex-1 justify-center items-center text-3xl text-center'>
                     <p>Log in to store your favorite stocks!</p>
                 </div>
@@ -95,12 +94,12 @@ export default function WatchList() {
                 gap-4 my-4">
                     Add from within website to store stocks!
                 </main>
-            )} */}
-            <main
+            )}
+            {/* <main
                 className="flex flex-wrap flex-1 justify-center items-center
                 gap-4 my-4">
                 {watchlistMap}
-            </main>
+            </main> */}
         </>
     )
 }
