@@ -8,7 +8,7 @@ export async function checkAuth() {
         if (!user.isLoggedIn) {
             return false
         }
-        return user.name
+        return user.email
 
     } catch (err) {
         console.log(err, 'Auth check failed')
