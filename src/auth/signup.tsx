@@ -55,7 +55,7 @@ export default function SignUp() {
                 <p>
                     Already have an account? <Link className="text-blue-500" to="/login">Sign in</Link>
                 </p>
-                <button className="hover:bg-blue-400 rounded-xl mt-4 px-4 py-2 bg-blue-500 text-white cursor-pointer">Sign In</button>
+                <button className="hover:bg-blue-400 rounded-xl mt-4 px-4 py-2 bg-blue-500 text-white cursor-pointer">Sign Up</button>
                 {/* {error && <p className="text-red-600 text-center pt-4">{error}</p>} */}
             </form>
         </main>
