@@ -4,6 +4,7 @@ import { stocksRouter } from "./src/backend/routes/stockRoutes.ts"
 import session from "express-session"
 import dotenv from "dotenv"
 import { watchListRouter } from "./src/backend/routes/watchListRouter.ts"
+import { authRouter } from "./src/backend/routes/authRoutes.ts"
 
 const app = express()
 
@@ -35,6 +36,7 @@ app.use(session({
 
 app.use("/stocks", stocksRouter)
 app.use("/watchlist", watchListRouter)
+app.use("/auth", authRouter)
 
 app.use((req, res) => {
     console.log(req.body)

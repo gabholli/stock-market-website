@@ -1,3 +1,4 @@
+import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
 
@@ -7,11 +8,15 @@ export default function LogIn() {
 
     function loginSubmit(formData: FormData) {
         try {
-            let email = formData.get("email") as string
-            let password = formData.get("password") as string
-            if (!email || !password) return
-            console.log(email)
-            console.log(password)
+            let emailValue = formData.get("email") as string
+            let passwordValue = formData.get("password") as string
+            if (!emailValue || !passwordValue) return
+
+            axios.post("https://stock-market-website-wq7x.onrender.com/auth/login",
+                { email: emailValue, password: passwordValue }
+            )
+            console.log(emailValue)
+            console.log(passwordValue)
             toast.success("You are logged in!")
             navigate("/")
 
