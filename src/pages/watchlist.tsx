@@ -40,7 +40,10 @@ export default function WatchList() {
 
     function handleDelete(symbol: string) {
         axios.delete(`https://stock-market-website-wq7x.onrender.com/watchlist/${symbol}`)
-            .then(response => console.log(response))
+            .then(response => {
+                console.log(response.data)
+                setWatchlist(response.data)
+            })
             .catch(error => console.error(error))
     }
 
