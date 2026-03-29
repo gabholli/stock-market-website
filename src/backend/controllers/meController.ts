@@ -1,5 +1,5 @@
 import type { Request, Response } from "express"
-import db from "../db/connect"
+import db from "../db/connect.ts"
 
 export async function getCurrentUser(req: Request, res: Response) {
     try {
