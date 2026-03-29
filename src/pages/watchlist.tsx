@@ -95,11 +95,6 @@ export default function WatchList() {
                     Add from within website to store stocks!
                 </main>
             )}
-            {/* <main
-                className="flex flex-wrap flex-1 justify-center items-center
-                gap-4 my-4">
-                {watchlistMap}
-            </main> */}
         </>
     )
 }

@@ -1,13 +1,32 @@
+import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
+import { checkAuth } from "../utils/checkAuth"
+import { log } from "console"
 
 export default function Header() {
+
+    const [loggedIn, setLoggedIn] = useState<boolean>(false)
+
+    useEffect(() => {
+        async function isSignedIn() {
+            const checkAuthValue = await checkAuth()
+            setLoggedIn(checkAuthValue)
+        }
+        isSignedIn()
+    }, [loggedIn])
+
+
+    function handleSignOut() {
+        console.log("Signed out")
+    }
+
     return (
         <>
             <main className="bg-blue-500 text-white flex flex-col lg:flex-row pt-4 md:pt-0 md:mt-0 justify-between items-center lg:pl-24">
                 <section className="lg:p-8 md:pt-6">
                     <h1 className="text-xl md:text-4xl font-extrabold">Stock Pulse</h1>
                 </section>
-                <nav className="flex items-center justify-center lg:justify-end lg:pr-24 gap-x-8 p-4 md:p-6 lg:p-8
+                <nav className="flex items-center justify-center flex-wrap gap-4 lg:justify-end lg:pr-24 gap-x-8 p-4 md:p-6 lg:p-8
                 shadow-md md:text-3xl 2xl:text-3xl text-center">
                     <NavLink to="/" end>
                         Home
@@ -21,6 +40,14 @@ export default function Header() {
                     <NavLink to="login" end>
                         Log In / Sign Up
                     </NavLink>
+                    {loggedIn ? (
+                        <button
+                            className="cursor-pointer"
+                            onClick={handleSignOut}
+                        >
+                            Sign Out
+                        </button>
+                    ) : null}
                 </nav>
             </main>
         </>
