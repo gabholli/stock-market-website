@@ -46,8 +46,9 @@ export async function registerUser(req: Request, res: Response) {
     } catch (error) {
         if (error instanceof Error) {
             console.error("Registration error:", error.message)
-            res.status(500).json({ error: "Registration failed. Please try again." })
         }
+        res.status(500).json({ error: "Registration failed. Please try again." })
+
     }
 }
 
@@ -76,7 +77,7 @@ export async function loginUser(req: Request, res: Response) {
         }
 
         req.session.userId = result._id.toString()
-        req.session.save((err => {
+        req.session.save(err => {
             if (err) return res.status(500).json({ error: "Session error." })
             res.json({ message: "Logged in." })
         })
@@ -84,8 +85,8 @@ export async function loginUser(req: Request, res: Response) {
     } catch (error) {
         if (error instanceof Error) {
             console.error("Login error: ", error.message)
-            res.status(500).json({ error: "Login failed. Please try again." })
         }
+        res.status(500).json({ error: "Login failed. Please try again." })
 
     }
 
