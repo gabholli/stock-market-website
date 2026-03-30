@@ -1,9 +1,11 @@
-import { NavLink } from "react-router"
+import { NavLink, useNavigate } from "react-router"
 import toast from "react-hot-toast"
 import api from "../../backend/api"
 import { UserAuth } from "../context/AuthContext"
 
 export default function Header() {
+
+    const navigate = useNavigate()
 
     const { loggedIn, setLoggedIn } = UserAuth()
 
@@ -13,6 +15,7 @@ export default function Header() {
                 console.log(response.data)
                 setLoggedIn(false)
                 toast.success("Logged out successfully!")
+                navigate("/")
             })
             .catch(error => {
                 console.error(error)

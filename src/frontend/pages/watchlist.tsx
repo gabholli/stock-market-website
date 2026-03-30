@@ -5,7 +5,6 @@ import { useNavigate } from "react-router"
 import { checkAuth } from "../../utils/checkAuth"
 import toast from "react-hot-toast"
 import api from "../../backend/api"
-
 export default function WatchList() {
     let navigate = useNavigate()
 
