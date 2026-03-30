@@ -1,8 +1,10 @@
-import axios from "axios"
+import api from "../backend/api"
 
 export async function checkAuth() {
     try {
-        const res = await axios.get("https://stock-market-website-wq7x.onrender.com/auth/me")
+        const res = await api.get("/auth/me",
+            { withCredentials: true }
+        )
 
         const user = res.data
         if (!user.isLoggedIn) {

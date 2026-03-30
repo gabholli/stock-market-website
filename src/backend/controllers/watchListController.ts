@@ -38,7 +38,6 @@ export async function getAll(req: Request, res: Response) {
     let results = await collection
         .find({ userId })
         .toArray()
-    console.log(results)
     res.status(200).json(results)
 }
 
