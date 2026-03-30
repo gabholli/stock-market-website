@@ -19,7 +19,7 @@ export async function registerUser(req: Request, res: Response) {
     try {
         let users = await db.collection("users")
         let result = await users
-            .findOne({ email, password })
+            .findOne({ email })
 
         if (result) {
             return res.status(400).json({ error: "Email or password already in use." })
@@ -40,7 +40,7 @@ export async function registerUser(req: Request, res: Response) {
             { upsert: true }
         )
 
-        req.session.userId = insertResult._id
+        req.session.userId = insertResult.upsertedId?.toString()
 
         res.status(201).json({ message: "User registered." })
     } catch (error) {
@@ -76,7 +76,10 @@ export async function loginUser(req: Request, res: Response) {
         }
 
         req.session.userId = result._id.toString()
-        res.json({ message: "Logged in." })
+        req.session.save((err => {
+            if (err) return res.status(500).json({ error: "Session error." })
+            res.json({ message: "Logged in." })
+        })
 
     } catch (error) {
         if (error instanceof Error) {
