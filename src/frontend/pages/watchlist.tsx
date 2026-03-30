@@ -52,7 +52,7 @@ export default function WatchList() {
         return (
             <section
                 key={item._id}
-                className="bg-white text-black flex justify-center flex-col text-left p-4 md:p-12 
+                className="bg-neutral-900 flex justify-center flex-col text-left p-4 md:p-12 
                 shadow-xl rounded-xl w-68 h-48 md:w-96 hover:cursor-pointer"
             >
                 <div
