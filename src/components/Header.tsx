@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
 import { checkAuth } from "../utils/checkAuth"
+import axios from "axios"
+import toast from "react-hot-toast"
 
 export default function Header() {
 
@@ -16,7 +18,15 @@ export default function Header() {
 
 
     function handleSignOut() {
-        console.log("Signed out")
+        axios.get("https://stock-market-website-wq7x.onrender.com/auth/logout")
+            .then(response => {
+                console.log(response.data)
+                toast.success("Logged out successfully!")
+            })
+            .catch(error => {
+                console.error(error)
+                toast.error("Error logging out.")
+            })
     }
 
     return (

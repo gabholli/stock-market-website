@@ -11,7 +11,6 @@ export async function registerUser(req: Request, res: Response) {
     }
 
     email = email.trim()
-    password = password.trim()
 
     if (!validator.isEmail(email)) {
         return res.status(400).json({ error: "invalid email format" })
@@ -53,12 +52,45 @@ export async function registerUser(req: Request, res: Response) {
 }
 
 export async function loginUser(req: Request, res: Response) {
-    console.log(req.body)
-    res.send("Login user here")
+    let { email, password } = req.body
+
+    if (!email || !password) {
+        return res.status(400).json({ error: "All fields are required." })
+    }
+
+    email = email.trim()
+
+    try {
+        const users = await db.collection("users")
+        let result = await users
+            .findOne({ email })
+
+        if (!result) {
+            res.status(401).json({ error: "Invalid credentials." })
+        }
+
+        const isValid = await bcrypt.compare(password, result.password)
+
+        if (!isValid) {
+            return res.status(401).json({ error: "Invalid credentials." })
+        }
+
+        req.session.userId = result._id
+        res.json({ message: "Logged in." })
+
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error("Login error: ", error.message)
+            res.status(500).json({ error: "Login failed. Please try again." })
+        }
+
+    }
+
 }
 
 
 export async function logoutUser(req: Request, res: Response) {
-    console.log(req.body)
-    res.send("logout user here")
+    req.session.destroy(() => {
+        res.json({ message: "Logged out." })
+    })
 }
