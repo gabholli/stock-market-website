@@ -1,5 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import type { ChartProps } from '../types/types'
+import type { ChartProps } from '../../types/types'
 
 export default function Chart({ timeSeries }: ChartProps) {
     return (

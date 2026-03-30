@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { BrowserRouter } from "react-router";
 import { Toaster } from 'react-hot-toast';
-import AuthContextProvider from './context/AuthContext.tsx';
+import AuthContextProvider from './frontend/context/AuthContext.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <AuthContextProvider>

@@ -5,7 +5,7 @@ import { UserAuth } from "../context/AuthContext";
 
 export default function LogIn() {
 
-    const { setLoggedIn } = UserAuth() as { setLoggedIn: (value: boolean) => void }
+    const { setLoggedIn } = UserAuth()
 
     const navigate = useNavigate()
 

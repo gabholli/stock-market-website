@@ -1,12 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import type { StockList, TimeSeries } from "../types/types"
+import type { StockList, TimeSeries } from "../../types/types"
 import Loading from "../components/Loading"
 import Chart from "../components/Chart"
 import toast from "react-hot-toast"
 import { useLocation } from "react-router"
-import { checkAuth } from "../utils/checkAuth"
-import api from "../backend/api"
+import { checkAuth } from "../../utils/checkAuth"
+import api from "../../backend/api"
 
 export default function Data() {
 

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router"
 import toast from "react-hot-toast"
-import api from "../backend/api"
+import api from "../../backend/api"
 import { UserAuth } from "../context/AuthContext"
 
 export default function Header() {

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState, useContext } from "react"
-import { checkAuth } from "../utils/checkAuth"
-import type { AuthContextType } from "../types/types"
 import type { ReactNode } from "react"
+import type { AuthContextType } from "../../types/types"
+import { checkAuth } from "../../utils/checkAuth"
 
 const AuthContext = createContext<AuthContextType>({
     loggedIn: false,
