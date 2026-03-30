@@ -6,17 +6,22 @@ export default function LogIn() {
 
     const navigate = useNavigate()
 
-    function loginSubmit(formData: FormData) {
+    async function loginSubmit(formData: FormData) {
         try {
             let emailValue = formData.get("email") as string
             let passwordValue = formData.get("password") as string
             if (!emailValue || !passwordValue) return
 
-            axios.post("https://stock-market-website-wq7x.onrender.com/auth/login",
-                { email: emailValue, password: passwordValue }
+            const response = axios.post("https://stock-market-website-wq7x.onrender.com/auth/login",
+                { email: emailValue, password: passwordValue },
+                { withCredentials: true }
             )
-            toast.success("You are logged in!")
-            navigate("/")
+
+            if ((await response).data.message) {
+                toast.success("You are logged in!")
+                navigate("/")
+            }
+
 
         } catch (error) {
             if (error instanceof Error) {

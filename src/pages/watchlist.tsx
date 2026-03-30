@@ -15,7 +15,9 @@ export default function WatchList() {
     console.log(loggedIn)
     useEffect(() => {
         setLoading(true)
-        axios.get("https://stock-market-website-wq7x.onrender.com/watchlist/all")
+        axios.get("https://stock-market-website-wq7x.onrender.com/watchlist/all",
+            { withCredentials: true }
+        )
             .then(response => {
                 setWatchlist(response.data)
                 setLoading(false)
