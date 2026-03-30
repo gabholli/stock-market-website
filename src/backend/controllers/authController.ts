@@ -66,6 +66,8 @@ export async function loginUser(req: Request, res: Response) {
         let result = await users
             .findOne({ email })
 
+        console.log("user found:", result)
+
         if (!result) {
             return res.status(401).json({ error: "Invalid credentials." })
         }
