@@ -1,4 +1,3 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
 import type { Watchlist } from "../types/types"
