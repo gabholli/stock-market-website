@@ -73,12 +73,14 @@ export async function loginUser(req: Request, res: Response) {
         }
 
         const isValid = await bcrypt.compare(password, result.password)
+        console.log("Password valid: ", isValid)
 
         if (!isValid) {
             return res.status(401).json({ error: "Invalid credentials." })
         }
 
         req.session.userId = result._id.toString()
+        console.log("Session userID set: ", req.session.userId)
         res.json({ message: "Logged in." })
 
     } catch (error) {
