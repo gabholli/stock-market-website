@@ -75,7 +75,7 @@ export async function loginUser(req: Request, res: Response) {
             return res.status(401).json({ error: "Invalid credentials." })
         }
 
-        req.session.userId = result._id
+        req.session.userId = result._id.toString()
         res.json({ message: "Logged in." })
 
     } catch (error) {
