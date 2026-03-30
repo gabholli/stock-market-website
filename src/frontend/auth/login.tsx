@@ -41,7 +41,7 @@ export default function LogIn() {
                 <h2 className="font-bold">Sign In</h2>
                 <div className="flex flex-col py-4">
                     <input
-                        className=" indent-4 p-2 border-white border-2 rounded-xl"
+                        className=" indent-4 p-2 border-black border-2 rounded-xl"
                         type="email"
                         name="email"
                         id="email"
@@ -51,7 +51,7 @@ export default function LogIn() {
                 </div>
                 <div className="flex flex-col py-4">
                     <input
-                        className="indent-4 p-2 border-white border-2 rounded-xl"
+                        className="indent-4 p-2 border-black border-2 rounded-xl"
                         type="password"
                         name="password"
                         id="password"
