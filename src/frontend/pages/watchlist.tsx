@@ -2,15 +2,18 @@ import { useEffect, useState } from "react"
 import Loading from "../components/Loading"
 import type { Watchlist } from "../../types/types"
 import { useNavigate } from "react-router"
-import { checkAuth } from "../../utils/checkAuth"
 import toast from "react-hot-toast"
 import api from "../../backend/api"
+import { UserAuth } from "../context/AuthContext"
+
 export default function WatchList() {
+
+    const { loggedIn } = UserAuth()
+
     let navigate = useNavigate()
 
     const [watchlist, setWatchlist] = useState<Watchlist[]>([])
     const [loading, setLoading] = useState<boolean>(false)
-    const [loggedIn, setLoggedIn] = useState<boolean>(false)
 
     useEffect(() => {
         setLoading(true)
@@ -25,14 +28,6 @@ export default function WatchList() {
                 console.log(error)
                 setLoading(false)
             })
-    }, [])
-
-    useEffect(() => {
-        async function isSignedIn() {
-            const checkAuthValue = await checkAuth()
-            setLoggedIn(checkAuthValue)
-        }
-        isSignedIn()
     }, [])
 
     if (loading) {
