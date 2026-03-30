@@ -41,6 +41,7 @@ export default function Chart({ timeSeries }: ChartProps) {
                                     stroke: '#0000FF',
                                 }}
                                 contentStyle={{
+                                    color: "#000000",
                                     backgroundColor: '#ADD8E6',
                                     borderColor: 'var(--color-border-2)',
                                 }}
