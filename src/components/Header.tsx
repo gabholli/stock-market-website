@@ -1,26 +1,17 @@
-import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
-import { checkAuth } from "../utils/checkAuth"
 import toast from "react-hot-toast"
 import api from "../backend/api"
+import { UserAuth } from "../context/AuthContext"
 
 export default function Header() {
 
-    const [loggedIn, setLoggedIn] = useState<boolean>(false)
-
-    useEffect(() => {
-        async function isSignedIn() {
-            const checkAuthValue = await checkAuth()
-            setLoggedIn(checkAuthValue)
-        }
-        isSignedIn()
-    }, [])
-
+    const { loggedIn, setLoggedIn } = UserAuth()
 
     function handleSignOut() {
         api.get("/auth/logout")
             .then(response => {
                 console.log(response.data)
+                setLoggedIn(false)
                 toast.success("Logged out successfully!")
             })
             .catch(error => {

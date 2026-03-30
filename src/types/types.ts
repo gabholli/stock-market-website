@@ -26,3 +26,8 @@ export interface Watchlist {
     exchange: string,
     symbolName: string
 }
+
+export interface AuthContextType {
+    loggedIn: boolean
+    setLoggedIn: (value: boolean) => void
+}

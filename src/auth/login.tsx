@@ -1,8 +1,11 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
+import { UserAuth } from "../context/AuthContext";
 
 export default function LogIn() {
+
+    const { setLoggedIn } = UserAuth() as { setLoggedIn: (value: boolean) => void }
 
     const navigate = useNavigate()
 
@@ -18,6 +21,7 @@ export default function LogIn() {
             )
 
             if ((await response).data.message) {
+                setLoggedIn(true)
                 toast.success("You are logged in!")
                 navigate("/")
             }
