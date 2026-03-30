@@ -6,6 +6,7 @@ import Chart from "../components/Chart"
 import toast from "react-hot-toast"
 import { useLocation } from "react-router"
 import { checkAuth } from "../utils/checkAuth"
+import api from "../backend/api"
 
 export default function Data() {
 
@@ -28,10 +29,10 @@ export default function Data() {
         if (!symbol) return
         setLoading(true)
         async function fetchStocks() {
-            const stockData = `https://stock-market-website-wq7x.onrender.com/stocks?symbol=${symbol}`
-            const series = `https://stock-market-website-wq7x.onrender.com/stocks/series?symbol=${symbol}`
-            const getStocks = axios.get(stockData)
-            const getTime = axios.get(series)
+            const stockData = `/stocks?symbol=${symbol}`
+            const series = `/stocks/series?symbol=${symbol}`
+            const getStocks = api.get(stockData)
+            const getTime = api.get(series)
 
             axios.all([getStocks, getTime]).then(
                 axios.spread((...allData) => {
@@ -70,7 +71,7 @@ export default function Data() {
                 toast.error("Please log in to save stocks to watchlist")
                 return
             }
-            const response = await axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
+            const response = await api.post("/watchlist", {
                 symbol: stockInfo?.symbol,
                 symbolName: stockInfo?.name,
                 exchange: stockInfo?.exchange

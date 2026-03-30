@@ -5,6 +5,7 @@ import type { Watchlist } from "../types/types"
 import { useNavigate } from "react-router"
 import { checkAuth } from "../utils/checkAuth"
 import toast from "react-hot-toast"
+import api from "../backend/api"
 
 export default function WatchList() {
     let navigate = useNavigate()
@@ -15,7 +16,7 @@ export default function WatchList() {
 
     useEffect(() => {
         setLoading(true)
-        axios.get("https://stock-market-website-wq7x.onrender.com/watchlist/all",
+        api.get("/watchlist/all",
             { withCredentials: true }
         )
             .then(response => {
@@ -41,7 +42,7 @@ export default function WatchList() {
     }
 
     function handleDelete(symbol: string) {
-        axios.delete(`https://stock-market-website-wq7x.onrender.com/watchlist/${symbol}`)
+        api.delete(`/watchlist/${symbol}`)
             .then(response => {
                 console.log(response.data)
                 setWatchlist(prev => prev.filter(item => item.symbol !== symbol))
