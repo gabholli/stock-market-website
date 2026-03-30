@@ -14,6 +14,6 @@ createRoot(document.getElementById('root')!).render(
         position="bottom-left"
         reverseOrder={false}
       />
-    </BrowserRouter>,
+    </BrowserRouter>
   </AuthContextProvider>
 )
