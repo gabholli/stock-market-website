@@ -110,31 +110,39 @@ export default function Data() {
                 gap-y-8 mt-8 p-4">
                 {stockInfo && timeSeries && timeSeries.values ? (
                     <>
-                        <section className="bg-white flex flex-col gap-y-2 text-left p-4 md:p-12 shadow-xl rounded-xl">
+                        <section className="bg-neutral-900 flex flex-col gap-y-2 text-left p-4 md:p-12 shadow-xl rounded-xl">
                             <h1 className="text-lg">{stockInfo?.symbol}</h1>
                             <p className="underline text-lg">{stockInfo?.name}</p>
                             <div className="flex flex-col gap-y-2">
-                                {parseInt(stockInfo?.change ?? "0") > 0 ? (
-                                    <p>Stock Change: ${parseFloat(stockInfo?.change?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                ) :
-                                    <p>Stock Change: -${parseFloat(stockInfo?.change?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                }
-                                {parseInt(stockInfo?.close ?? "0") > 0 ? (
-                                    <p>Last Closing Price: ${parseFloat(stockInfo?.close?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                ) :
-                                    <p>Last Closing Price: -${parseFloat(stockInfo?.close?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                }
+                                {parseFloat(stockInfo?.change ?? "0") > 0 ? (
+                                    <p>Stock Change: <span className="text-green-400">+${Math.abs(parseFloat(stockInfo?.change ?? "0")).toFixed(2)}</span></p>
+                                ) : parseFloat(stockInfo?.change ?? "0") < 0 ? (
+                                    <p>Stock Change: <span className="text-red-400">-${Math.abs(parseFloat(stockInfo?.change ?? "0")).toFixed(2)}</span></p>
+                                ) : (
+                                    <p>Stock Change: <span className="text-white">$0.00</span></p>
+                                )}
+                                {parseFloat(stockInfo?.close ?? "0") > 0 ? (
+                                    <p>Last Closing Price: <span className="text-green-400">+${Math.abs(parseFloat(stockInfo?.close ?? "0")).toFixed(2)}</span></p>
+                                ) : parseFloat(stockInfo?.close ?? "0") < 0 ? (
+                                    <p>Last Closing Price: <span className="text-red-400">-${Math.abs(parseFloat(stockInfo?.close ?? "0")).toFixed(2)}</span></p>
+                                ) : (
+                                    <p>Last Closing Price: <span className="text-white">$0.00</span></p>
+                                )}
                                 <p>Exchange: {stockInfo?.exchange}</p>
-                                {parseInt(stockInfo?.high ?? "0") > 0 ? (
-                                    <p>Highest Price: ${parseFloat(stockInfo?.high?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                ) :
-                                    <p>Highest Price: -${parseFloat(stockInfo?.high?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                }
-                                {parseInt(stockInfo?.low ?? "0") > 0 ? (
-                                    <p>Lowest Price: ${parseFloat(stockInfo?.low?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                ) :
-                                    <p>Lowest Price: -${parseFloat(stockInfo?.low?.substring(1) ?? "N/A").toFixed(2)}</p>
-                                }
+                                {parseFloat(stockInfo?.high ?? "0") > 0 ? (
+                                    <p>Highest Price: <span className="text-green-400">+${Math.abs(parseFloat(stockInfo?.high ?? "0")).toFixed(2)}</span></p>
+                                ) : parseFloat(stockInfo?.high ?? "0") < 0 ? (
+                                    <p>Highest Price: <span className="text-red-400">-${Math.abs(parseFloat(stockInfo?.high ?? "0")).toFixed(2)}</span></p>
+                                ) : (
+                                    <p>Highest Price: <span className="text-white">$0.00</span></p>
+                                )}
+                                {parseFloat(stockInfo?.low ?? "0") > 0 ? (
+                                    <p>Lowest Price: <span className="text-green-400">+${Math.abs(parseFloat(stockInfo?.low ?? "0")).toFixed(2)}</span></p>
+                                ) : parseFloat(stockInfo?.low ?? "0") < 0 ? (
+                                    <p>Lowest Price: <span className="text-red-400">-${Math.abs(parseFloat(stockInfo?.low ?? "0")).toFixed(2)}</span></p>
+                                ) : (
+                                    <p>Lowest Price: <span className="text-white">$0.00</span></p>
+                                )}
                             </div>
                             <button onClick={handleAddClick} className="hover:bg-blue-400 rounded-xl mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
                         </section>
