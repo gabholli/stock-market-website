@@ -15,7 +15,7 @@ export default function Data() {
     const [loading, setLoading] = useState<boolean>(false)
     const [symbol, setSymbol] = useState<string>((watchListSymbolData.state as string) || "")
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
-    console.log(loggedIn)
+
     useEffect(() => {
         async function isSignedIn() {
             const checkAuthValue = await checkAuth()
@@ -66,10 +66,10 @@ export default function Data() {
 
     async function handleAddClick() {
         try {
-            // if (!loggedIn) {
-            //     toast.error("Please log in to save stocks to watchlist")
-            //     return
-            // }
+            if (!loggedIn) {
+                toast.error("Please log in to save stocks to watchlist")
+                return
+            }
             const response = await axios.post("https://stock-market-website-wq7x.onrender.com/watchlist", {
                 symbol: stockInfo?.symbol,
                 symbolName: stockInfo?.name,

@@ -12,7 +12,7 @@ export default function WatchList() {
     const [watchlist, setWatchlist] = useState<Watchlist[]>([])
     const [loading, setLoading] = useState<boolean>(false)
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
-    console.log(loggedIn)
+
     useEffect(() => {
         setLoading(true)
         axios.get("https://stock-market-website-wq7x.onrender.com/watchlist/all",
