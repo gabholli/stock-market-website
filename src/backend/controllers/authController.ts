@@ -52,7 +52,6 @@ export async function registerUser(req: Request, res: Response) {
 }
 
 export async function loginUser(req: Request, res: Response) {
-    console.log("Login attempt: ", req.body)
     let { email, password } = req.body
 
     if (!email || !password) {
@@ -66,21 +65,17 @@ export async function loginUser(req: Request, res: Response) {
         let result = await users
             .findOne({ email })
 
-        console.log("user found:", result)
-
         if (!result) {
             return res.status(401).json({ error: "Invalid credentials." })
         }
 
         const isValid = await bcrypt.compare(password, result.password)
-        console.log("Password valid: ", isValid)
 
         if (!isValid) {
             return res.status(401).json({ error: "Invalid credentials." })
         }
 
         req.session.userId = result._id.toString()
-        console.log("Session userID set: ", req.session.userId)
         res.json({ message: "Logged in." })
 
     } catch (error) {

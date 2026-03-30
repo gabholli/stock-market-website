@@ -24,10 +24,7 @@ if (!mongoUri) {
     throw new Error("ATLAS_URI environment variable is not setz")
 }
 
-app.use(cors({
-    origin: ["http://localhost:5173", "https://market-website.netlify.app"],
-    credentials: true
-}))
+app.use(cors())
 
 app.use(express.json())
 
@@ -42,8 +39,8 @@ app.use(session({
     }),
     cookie: {
         httpOnly: true,
-        secure: true,
-        sameSite: "none"
+        secure: false,
+        sameSite: "lax"
     }
 
 }))
