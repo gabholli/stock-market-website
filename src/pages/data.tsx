@@ -74,7 +74,8 @@ export default function Data() {
                 symbol: stockInfo?.symbol,
                 symbolName: stockInfo?.name,
                 exchange: stockInfo?.exchange
-            })
+            },
+                { withCredentials: true })
             if (response.data.inserted) {
                 toast.success(`${stockInfo?.symbol} added to watchlist.`)
             } else {
@@ -104,7 +105,7 @@ export default function Data() {
                 <div className="flex flex-col md:flex-row gap-y-4 gap-x-4">
                     <input
                         name="symbolValue"
-                        className="bg-blue-500 text-white indent-4 p-2 rounded-xl"
+                        className="indent-4 p-2 border-black border-2 rounded-xl"
                         type="text"
                         placeholder="e.g., AAPL">
                     </input>

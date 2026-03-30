@@ -12,7 +12,8 @@ export default function SignUp() {
             let passwordValue = formData.get("password") as string
             if (!emailValue || !passwordValue) return
             axios.post("https://stock-market-website-wq7x.onrender.com/auth/register",
-                { email: emailValue, password: passwordValue }
+                { email: emailValue, password: passwordValue },
+                { withCredentials: true }
             )
             toast.success("You are signed up!")
             navigate("/")
@@ -34,7 +35,7 @@ export default function SignUp() {
                 <h2 className="font-bold">Sign Up</h2>
                 <div className="flex flex-col py-4">
                     <input
-                        className="bg-blue-500 text-white indent-4 p-2 rounded-xl"
+                        className="indent-4 p-2 border-black border-2 rounded-xl"
                         type="email"
                         name="email"
                         id="email"
@@ -43,7 +44,7 @@ export default function SignUp() {
                 </div>
                 <div className="flex flex-col py-4">
                     <input
-                        className="bg-blue-500 text-white indent-4 p-2 rounded-xl"
+                        className="indent-4 p-2 border-black border-2 rounded-xl"
                         type="password"
                         name="password"
                         id="password"
