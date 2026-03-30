@@ -4,7 +4,7 @@ import BackToTopButton from "./BackToTopButton"
 
 export default function SiteLayout() {
     return (
-        <div className="font-googlesans bg-gray-200 flex flex-col min-h-dvh">
+        <div className="font-googlesans bg-black text-white flex flex-col min-h-dvh">
             <Header />
             <Outlet />
             <BackToTopButton />

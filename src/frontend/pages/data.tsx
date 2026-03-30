@@ -99,7 +99,7 @@ export default function Data() {
                 <div className="flex flex-col md:flex-row gap-y-4 gap-x-4">
                     <input
                         name="symbolValue"
-                        className="indent-4 p-2 border-black border-2 rounded-xl"
+                        className="indent-4 p-2 border-white border-2 rounded-xl"
                         type="text"
                         placeholder="e.g., AAPL">
                     </input>

@@ -21,7 +21,8 @@ export default function Header() {
     }
 
     return (
-        <header className="bg-blue-500 text-white flex flex-col lg:flex-row pt-4 md:pt-0 md:mt-0 justify-between items-center lg:pl-24">
+        <header className="bg-black text-white border-b-2 border-white
+            flex flex-col lg:flex-row pt-4 md:pt-0 md:mt-0 justify-between items-center lg:pl-24">
             <section className="lg:p-8 md:pt-6">
                 <h1 className="text-xl md:text-4xl font-extrabold">Stock Pulse</h1>
             </section>
