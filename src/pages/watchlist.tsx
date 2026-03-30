@@ -86,7 +86,7 @@ export default function WatchList() {
                 </div>
             ) : watchlistMap.length > 0 ? (
                 <main
-                    className="flex flex-wrap flex-1 justify-center text-3xl items-center
+                    className="flex flex-wrap flex-1 justify-center items-center
                 gap-4 my-4">
                     {watchlistMap}
                 </main>

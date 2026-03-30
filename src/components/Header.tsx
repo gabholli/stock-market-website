@@ -14,7 +14,7 @@ export default function Header() {
             setLoggedIn(checkAuthValue)
         }
         isSignedIn()
-    }, [loggedIn])
+    }, [])
 
 
     function handleSignOut() {

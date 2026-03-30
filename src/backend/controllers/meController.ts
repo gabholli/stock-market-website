@@ -10,8 +10,6 @@ export async function getCurrentUser(req: Request, res: Response) {
         const userId = req.session.userId
         const database = await db.collection("users")
 
-
-
         let user = await database
             .findOne({ _id: new ObjectId(userId) })
 

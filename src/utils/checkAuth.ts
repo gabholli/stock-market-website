@@ -2,9 +2,7 @@ import api from "../backend/api"
 
 export async function checkAuth() {
     try {
-        const res = await api.get("/auth/me",
-            { withCredentials: true }
-        )
+        const res = await api.get("/auth/me")
 
         const user = res.data
         if (!user.isLoggedIn) {
