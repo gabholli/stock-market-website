@@ -52,6 +52,7 @@ export async function registerUser(req: Request, res: Response) {
 }
 
 export async function loginUser(req: Request, res: Response) {
+    console.log("Login attempt: ", req.body)
     let { email, password } = req.body
 
     if (!email || !password) {
