@@ -6,23 +6,24 @@ export default function SignUp() {
 
     const navigate = useNavigate()
 
-    function signUpSubmit(formData: FormData) {
+    async function signUpSubmit(formData: FormData) {
         try {
             let emailValue = formData.get("email") as string
             let passwordValue = formData.get("password") as string
-            if (!emailValue || !passwordValue) return
-            axios.post("https://stock-market-website-wq7x.onrender.com/auth/register",
+            if (!emailValue || !passwordValue) {
+                toast.error("Please fill out all fields.")
+                return
+            }
+            const res = await axios.post("https://stock-market-website-wq7x.onrender.com/auth/register",
                 { email: emailValue, password: passwordValue },
                 { withCredentials: true }
             )
-            toast.success("You are signed up!")
+            toast.success(res.data.message)
             navigate("/")
 
-        } catch (error) {
-            if (error instanceof Error) {
-                console.error(error.message)
-                toast.error("Error signing up. Please try again.")
-            }
+        } catch (error: any) {
+            console.error(error.message)
+            toast.error(error.response?.data?.error || "Error signing up.")
         }
     }
 

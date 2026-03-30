@@ -26,12 +26,9 @@ export default function LogIn() {
                 navigate("/")
             }
 
-
-        } catch (error) {
-            if (error instanceof Error) {
-                console.error(error.message)
-                toast.error("Error logging in. Please try again.")
-            }
+        } catch (error: any) {
+            console.error(error.message)
+            toast.error(error.response?.data?.error || "Error logging in.")
         }
     }
 

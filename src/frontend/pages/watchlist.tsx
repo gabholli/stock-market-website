@@ -75,7 +75,7 @@ export default function WatchList() {
     return (
         <>
             {!loggedIn ? (
-                <div className='flex flex-1 justify-center items-center text-3xl text-center'>
+                <div className='flex flex-1 justify-center items-center md:text-3xl text-center'>
                     <p>Log in to store your favorite stocks!</p>
                 </div>
             ) : watchlistMap.length > 0 ? (
@@ -86,7 +86,7 @@ export default function WatchList() {
                 </main>
             ) : (
                 <main
-                    className="flex flex-wrap flex-1 justify-center text-3xl items-center
+                    className="flex flex-wrap flex-1 justify-center md:text-3xl items-center
                 gap-4 my-4">
                     Add from within website to store stocks!
                 </main>
