@@ -130,18 +130,18 @@ export default function Data() {
                                 )}
                                 <p>Exchange: {stockInfo?.exchange}</p>
                                 {parseFloat(stockInfo?.high ?? "0") > 0 ? (
-                                    <p>Highest Price: <span className="text-green-400">+${Math.abs(parseFloat(stockInfo?.high ?? "0")).toFixed(2)}</span></p>
+                                    <p>Highest Price: ${Math.abs(parseFloat(stockInfo?.high ?? "0")).toFixed(2)}</p>
                                 ) : parseFloat(stockInfo?.high ?? "0") < 0 ? (
-                                    <p>Highest Price: <span className="text-red-400">-${Math.abs(parseFloat(stockInfo?.high ?? "0")).toFixed(2)}</span></p>
+                                    <p>Highest Price: -${Math.abs(parseFloat(stockInfo?.high ?? "0")).toFixed(2)}</p>
                                 ) : (
                                     <p>Highest Price: <span className="text-white">$0.00</span></p>
                                 )}
                                 {parseFloat(stockInfo?.low ?? "0") > 0 ? (
-                                    <p>Lowest Price: <span className="text-green-400">+${Math.abs(parseFloat(stockInfo?.low ?? "0")).toFixed(2)}</span></p>
+                                    <p>Lowest Price: ${Math.abs(parseFloat(stockInfo?.low ?? "0")).toFixed(2)}</p>
                                 ) : parseFloat(stockInfo?.low ?? "0") < 0 ? (
-                                    <p>Lowest Price: <span className="text-red-400">-${Math.abs(parseFloat(stockInfo?.low ?? "0")).toFixed(2)}</span></p>
+                                    <p>Lowest Price: -${Math.abs(parseFloat(stockInfo?.low ?? "0")).toFixed(2)}</p>
                                 ) : (
-                                    <p>Lowest Price: <span className="text-white">$0.00</span></p>
+                                    <p>Lowest Price: $0.00</p>
                                 )}
                             </div>
                             <button onClick={handleAddClick} className="hover:bg-blue-400 rounded-xl mt-2 px-4 py-2 bg-blue-500 text-white cursor-pointer">Add to watch list</button>
@@ -157,7 +157,7 @@ export default function Data() {
                 )
                 }
 
-            </main>
+            </main >
         </>
     )
 }
