@@ -122,11 +122,11 @@ export default function Data() {
                                     <p>Stock Change: <span className="text-white">$0.00</span></p>
                                 )}
                                 {parseFloat(stockInfo?.close ?? "0") > 0 ? (
-                                    <p>Last Closing Price: <span className="text-green-400">+${Math.abs(parseFloat(stockInfo?.close ?? "0")).toFixed(2)}</span></p>
+                                    <p>Last Closing Price: ${Math.abs(parseFloat(stockInfo?.close ?? "0")).toFixed(2)}</p>
                                 ) : parseFloat(stockInfo?.close ?? "0") < 0 ? (
-                                    <p>Last Closing Price: <span className="text-red-400">-${Math.abs(parseFloat(stockInfo?.close ?? "0")).toFixed(2)}</span></p>
+                                    <p>Last Closing Price:-${Math.abs(parseFloat(stockInfo?.close ?? "0")).toFixed(2)}</p>
                                 ) : (
-                                    <p>Last Closing Price: <span className="text-white">$0.00</span></p>
+                                    <p>Last Closing Price: $0.00</p>
                                 )}
                                 <p>Exchange: {stockInfo?.exchange}</p>
                                 {parseFloat(stockInfo?.high ?? "0") > 0 ? (
