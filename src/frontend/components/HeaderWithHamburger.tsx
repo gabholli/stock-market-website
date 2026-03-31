@@ -50,30 +50,30 @@ export default function HeaderWithHamburger() {
             <nav className="hidden lg:flex items-center gap-12
                     font-semibold md:text-3xl">
                 <NavLink
-                    className="hover:underline"
+                    className="focus:underline"
                     to="/" end>
                     Home
                 </NavLink>
                 <NavLink
-                    className="hover:underline"
+                    className="focus:underline"
                     to="data" end>
                     Data
                 </NavLink>
                 <NavLink
-                    className="hover:underline"
+                    className="focus:underline"
                     to="watchlist" end>
                     Watch List
                 </NavLink>
                 {!loggedIn ? (
                     <NavLink
-                        className="hover:underline"
+                        className="focus:underline"
                         to="login" end>
                         Log In / Sign Up
                     </NavLink>
                 ) : null}
                 {loggedIn ? (
                     <button
-                        className="cursor-pointer hover:underline"
+                        className="cursor-pointer focus:underline"
                         onClick={handleSignOut}
                     >
                         Sign Out
@@ -87,7 +87,7 @@ export default function HeaderWithHamburger() {
                 <Menu />
             </div>
 
-            <div className={`absolute lg:hidden top-24
+            <div className={`absolute xl:hidden top-24
                     left-0 w-full bg-neutral-900
                     flex-col items-center gap-6 font-semibold
                     transform transition-transform
@@ -97,30 +97,30 @@ export default function HeaderWithHamburger() {
                         p-4 transition-all
                         cursor-pointer flex flex-col gap-y-6">
                     <NavLink
-                        className="hover:underline"
+                        className="focus:underline"
                         to="/" end>
                         Home
                     </NavLink>
                     <NavLink
-                        className="hover:underline"
+                        className="focus:underline"
                         to="data" end>
                         Data
                     </NavLink>
                     <NavLink
-                        className="hover:underline"
+                        className="focus:underline"
                         to="watchlist" end>
                         Watch List
                     </NavLink>
                     {!loggedIn ? (
                         <NavLink
-                            className="hover:underline"
+                            className="focus:underline"
                             to="login" end>
                             Log In / Sign Up
                         </NavLink>
                     ) : null}
                     {loggedIn ? (
                         <button
-                            className="cursor-pointer hover:underline"
+                            className="cursor-pointer focus:underline"
                             onClick={handleSignOut}
                         >
                             Sign Out
