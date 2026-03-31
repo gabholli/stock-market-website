@@ -63,7 +63,7 @@ export default function HeaderWithHamburger() {
                     left-0 w-full bg-neutral-900 flex
                     flex-col items-center gap-6 font-semibold
                     transform transition-transform
-                    ${isOpen ? "opacity-100" : "opacity-0"}`}>
+                    ${isOpen ? "opacity-100" : "hidden"}`}>
                 <nav className="w-full text-center
                         p-4 hover:bg-neutral-800 transition-all
                         cursor-pointer flex flex-col gap-y-6">
