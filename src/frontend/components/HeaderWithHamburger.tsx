@@ -87,7 +87,7 @@ export default function HeaderWithHamburger() {
                 <Menu />
             </div>
 
-            <div className={`absolute xl:hidden top-24
+            <div className={`absolute lg:hidden top-24
                     left-0 w-full bg-neutral-900
                     flex-col items-center gap-6 font-semibold
                     transform transition-transform
