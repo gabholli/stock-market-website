@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@boxicons/react": "^1.0.3",
     "@tailwindcss/vite": "^4.2.0",
     "apicache": "^1.6.3",
     "axios": "^1.13.6",
