@@ -3,12 +3,28 @@ import { UserAuth } from "../context/AuthContext";
 import api from "../../backend/api";
 import toast from "react-hot-toast";
 import { Menu } from '@boxicons/react';
-import { useState } from "react";
+import { useEffect, useRef, useState, RefObject } from "react";
 
 export default function HeaderWithHamburger() {
 
     const { loggedIn, setLoggedIn } = UserAuth()
     const [isOpen, setIsOpen] = useState<boolean>(false)
+
+    let menuRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        function handler(e) {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
+                setIsOpen(false)
+            }
+        }
+
+        document.addEventListener("mousedown", handler)
+
+        return () => {
+            document.removeEventListener("mousedown", handler)
+        }
+    }, [])
 
     function handleSignOut() {
         api.get("/auth/logout")
@@ -24,7 +40,9 @@ export default function HeaderWithHamburger() {
     }
 
     return (
-        <header className="flex justify-between items-center
+        <header
+            ref={menuRef}
+            className="flex justify-between items-center
             text-white py-6 px-8 md:px-16 xl:px-32 border-b-2 border-white text-center">
             <section className="p-2">
                 <h1 className="text-xl md:text-4xl font-extrabold">Stock Pulse</h1>
@@ -67,7 +85,6 @@ export default function HeaderWithHamburger() {
                     transform transition-transform
                     ${isOpen ? "flex" : "hidden"}`}>
                 <nav
-                    onClick={() => setIsOpen(false)}
                     className="w-full text-center
                         p-4 hover:bg-neutral-800 transition-all
                         cursor-pointer flex flex-col gap-y-6">
