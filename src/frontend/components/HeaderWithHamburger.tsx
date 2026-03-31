@@ -3,7 +3,7 @@ import { UserAuth } from "../context/AuthContext";
 import api from "../../backend/api";
 import toast from "react-hot-toast";
 import { Menu } from '@boxicons/react';
-import { useEffect, useRef, useState, RefObject } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeaderWithHamburger() {
 
@@ -13,8 +13,8 @@ export default function HeaderWithHamburger() {
     let menuRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        function handler(e) {
-            if (menuRef.current && !menuRef.current.contains(e.target)) {
+        function handler(e: MouseEvent): void {
+            if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
                 setIsOpen(false)
             }
         }
