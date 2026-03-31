@@ -23,17 +23,17 @@ export default function Chart({ timeSeries }: ChartProps) {
                                 bottom: 5,
                             }}
                         >
-                            <CartesianGrid strokeDasharray="3 3" stroke="#0047AB" />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#FFFFFF" />
                             <XAxis
                                 dataKey="datetime"
-                                stroke="#0047AB"
+                                stroke="#FFFFFF"
                                 dx={-15}
                                 minTickGap={20}
                             />
                             <YAxis
                                 width="auto"
                                 domain={["auto", "auto"]}
-                                stroke="#0047AB"
+                                stroke="#FFFFFF"
                                 tickFormatter={v => `$${v}`}
                             />
                             <Tooltip
