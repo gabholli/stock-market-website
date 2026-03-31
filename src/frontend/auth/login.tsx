@@ -39,7 +39,7 @@ export default function LogIn() {
                 action={loginSubmit}
             >
                 <h2 className="self-start font-bold text-lg">Sign In</h2>
-                <p className="text-lg">
+                <p className="self-start text-lg">
                     Don't have an account yet? <Link className="text-blue-500" to="/signup">Sign up</Link>
                 </p>
                 <div className="flex flex-col py-4 w-full">

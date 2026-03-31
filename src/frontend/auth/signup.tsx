@@ -34,7 +34,7 @@ export default function SignUp() {
                 action={signUpSubmit}
             >
                 <h2 className="self-start font-bold text-lg">Sign Up</h2>
-                <p className="text-lg">
+                <p className="self-start text-lg">
                     Already have an account? <Link className="text-blue-500" to="/login">Sign in</Link>
                 </p>
                 <div className="flex flex-col py-4 w-full">
