@@ -38,8 +38,11 @@ export default function LogIn() {
                 className="max-w-md m-auto p-4 md:p-20 flex flex-col gap-y-4 justify-center items-center"
                 action={loginSubmit}
             >
-                <h2 className="font-bold">Sign In</h2>
-                <div className="flex flex-col py-4">
+                <h2 className="self-start font-bold text-lg">Sign In</h2>
+                <p className="text-lg">
+                    Don't have an account yet? <Link className="text-blue-500" to="/signup">Sign up</Link>
+                </p>
+                <div className="flex flex-col py-4 w-full">
                     <input
                         className=" indent-4 p-2 border-white border-2 rounded-xl"
                         type="email"
@@ -49,7 +52,7 @@ export default function LogIn() {
                         required
                     />
                 </div>
-                <div className="flex flex-col py-4">
+                <div className="flex flex-col py-4 w-full">
                     <input
                         className="indent-4 p-2 border-white border-2 rounded-xl"
                         type="password"
@@ -59,12 +62,10 @@ export default function LogIn() {
                         required
                     />
                 </div>
-                <p>
-                    Don't have an account yet? <Link className="text-blue-500" to="/signup">Sign up</Link>
-                </p>
+
                 <button className="hover:bg-blue-400 rounded-xl mt-4 px-4 py-2 bg-blue-500 text-white cursor-pointer">Sign In</button>
                 {/* {error && <p className="text-red-600 text-center pt-4">{error}</p>} */}
-            </form>
-        </main>
+            </form >
+        </main >
     )
 }
