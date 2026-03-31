@@ -40,9 +40,11 @@ export default function HeaderWithHamburger() {
                 <NavLink to="watchlist" end>
                     Watch List
                 </NavLink>
-                <NavLink to="login" end>
-                    Log In / Sign Up
-                </NavLink>
+                {!loggedIn ? (
+                    <NavLink to="login" end>
+                        Log In / Sign Up
+                    </NavLink>
+                ) : null}
                 {loggedIn ? (
                     <button
                         className="cursor-pointer"
@@ -76,9 +78,11 @@ export default function HeaderWithHamburger() {
                     <NavLink to="watchlist" end>
                         Watch List
                     </NavLink>
-                    <NavLink to="login" end>
-                        Log In / Sign Up
-                    </NavLink>
+                    {!loggedIn ? (
+                        <NavLink to="login" end>
+                            Log In / Sign Up
+                        </NavLink>
+                    ) : null}
                     {loggedIn ? (
                         <button
                             className="cursor-pointer"
