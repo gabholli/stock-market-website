@@ -86,7 +86,7 @@ export default function HeaderWithHamburger() {
                     ${isOpen ? "flex" : "hidden"}`}>
                 <nav
                     className="w-full text-center
-                        p-4 hover:bg-neutral-800 transition-all
+                        p-4 transition-all
                         cursor-pointer flex flex-col gap-y-6">
                     <NavLink to="/" end>
                         Home
