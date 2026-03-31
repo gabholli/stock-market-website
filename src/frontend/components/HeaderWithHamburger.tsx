@@ -49,23 +49,31 @@ export default function HeaderWithHamburger() {
             </section>
             <nav className="hidden lg:flex items-center gap-12
                     font-semibold md:text-3xl">
-                <NavLink to="/" end>
+                <NavLink
+                    className="hover:underline"
+                    to="/" end>
                     Home
                 </NavLink>
-                <NavLink to="data" end>
+                <NavLink
+                    className="hover:underline"
+                    to="data" end>
                     Data
                 </NavLink>
-                <NavLink to="watchlist" end>
+                <NavLink
+                    className="hover:underline"
+                    to="watchlist" end>
                     Watch List
                 </NavLink>
                 {!loggedIn ? (
-                    <NavLink to="login" end>
+                    <NavLink
+                        className="hover:underline"
+                        to="login" end>
                         Log In / Sign Up
                     </NavLink>
                 ) : null}
                 {loggedIn ? (
                     <button
-                        className="cursor-pointer"
+                        className="cursor-pointer hover:underline"
                         onClick={handleSignOut}
                     >
                         Sign Out
@@ -88,23 +96,31 @@ export default function HeaderWithHamburger() {
                     className="w-full text-center
                         p-4 transition-all
                         cursor-pointer flex flex-col gap-y-6">
-                    <NavLink to="/" end>
+                    <NavLink
+                        className="hover:underline"
+                        to="/" end>
                         Home
                     </NavLink>
-                    <NavLink to="data" end>
+                    <NavLink
+                        className="hover:underline"
+                        to="data" end>
                         Data
                     </NavLink>
-                    <NavLink to="watchlist" end>
+                    <NavLink
+                        className="hover:underline"
+                        to="watchlist" end>
                         Watch List
                     </NavLink>
                     {!loggedIn ? (
-                        <NavLink to="login" end>
+                        <NavLink
+                            className="hover:underline"
+                            to="login" end>
                             Log In / Sign Up
                         </NavLink>
                     ) : null}
                     {loggedIn ? (
                         <button
-                            className="cursor-pointer"
+                            className="cursor-pointer hover:underline"
                             onClick={handleSignOut}
                         >
                             Sign Out
