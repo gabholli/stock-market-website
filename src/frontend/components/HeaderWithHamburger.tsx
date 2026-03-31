@@ -50,30 +50,30 @@ export default function HeaderWithHamburger() {
             <nav className="hidden lg:flex items-center gap-12
                     font-semibold md:text-3xl">
                 <NavLink
-                    className="focus:underline"
+                    className="aria-[current=page]:underline"
                     to="/" end>
                     Home
                 </NavLink>
                 <NavLink
-                    className="focus:underline"
+                    className="aria-[current=page]:underline"
                     to="data" end>
                     Data
                 </NavLink>
                 <NavLink
-                    className="focus:underline"
+                    className="aria-[current=page]:underline"
                     to="watchlist" end>
                     Watch List
                 </NavLink>
                 {!loggedIn ? (
                     <NavLink
-                        className="focus:underline"
+                        className="aria-[current=page]:underline"
                         to="login" end>
                         Log In / Sign Up
                     </NavLink>
                 ) : null}
                 {loggedIn ? (
                     <button
-                        className="cursor-pointer focus:underline"
+                        className="cursor-pointer aria[current=page]:underline"
                         onClick={handleSignOut}
                     >
                         Sign Out
@@ -97,30 +97,30 @@ export default function HeaderWithHamburger() {
                         p-4 transition-all
                         cursor-pointer flex flex-col gap-y-6">
                     <NavLink
-                        className="focus:underline"
+                        className="aria-[current=page]:underline"
                         to="/" end>
                         Home
                     </NavLink>
                     <NavLink
-                        className="focus:underline"
+                        className="aria-[current=page]:underline"
                         to="data" end>
                         Data
                     </NavLink>
                     <NavLink
-                        className="focus:underline"
+                        className="aria-[current=page]:underline"
                         to="watchlist" end>
                         Watch List
                     </NavLink>
                     {!loggedIn ? (
                         <NavLink
-                            className="focus:underline"
+                            className="aria-[current=page]:underline"
                             to="login" end>
                             Log In / Sign Up
                         </NavLink>
                     ) : null}
                     {loggedIn ? (
                         <button
-                            className="cursor-pointer focus:underline"
+                            className="cursor-pointer aria-[current=page]:underline"
                             onClick={handleSignOut}
                         >
                             Sign Out
