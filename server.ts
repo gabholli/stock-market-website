@@ -22,7 +22,7 @@ if (!secret) {
 }
 
 if (!mongoUri) {
-    throw new Error("ATLAS_URI environment variable is not setz")
+    throw new Error("ATLAS_URI environment variable is not set")
 }
 
 app.use(cors({
