@@ -1,6 +1,6 @@
-import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
+import api from "../../backend/api";
 
 export default function SignUp() {
 
@@ -14,7 +14,7 @@ export default function SignUp() {
                 toast.error("Please fill out all fields.")
                 return
             }
-            const res = await axios.post("https://stock-market-website-wq7x.onrender.com/auth/register",
+            const res = await api.post("/auth/register",
                 { email: emailValue, password: passwordValue },
                 { withCredentials: true }
             )

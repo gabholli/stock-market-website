@@ -1,7 +1,7 @@
-import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
 import { UserAuth } from "../context/AuthContext";
+import api from "../../backend/api";
 
 export default function LogIn() {
 
@@ -15,7 +15,7 @@ export default function LogIn() {
             let passwordValue = formData.get("password") as string
             if (!emailValue || !passwordValue) return
 
-            const response = axios.post("https://stock-market-website-wq7x.onrender.com/auth/login",
+            const response = api.post("/auth/login",
                 { email: emailValue, password: passwordValue },
                 { withCredentials: true }
             )
