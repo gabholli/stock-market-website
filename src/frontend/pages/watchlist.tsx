@@ -17,9 +17,7 @@ export default function WatchList() {
 
     useEffect(() => {
         setLoading(true)
-        api.get("/watchlist/all",
-            { withCredentials: true }
-        )
+        api.get("/watchlist/all")
             .then(response => {
                 setWatchlist(response.data)
                 setLoading(false)

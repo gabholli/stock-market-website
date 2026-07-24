@@ -68,8 +68,7 @@ export default function Data() {
                 symbol: stockInfo?.symbol,
                 symbolName: stockInfo?.name,
                 exchange: stockInfo?.exchange
-            },
-                { withCredentials: true })
+            })
             if (response.data.inserted) {
                 toast.success(`${stockInfo?.symbol} added to watchlist.`)
             } else {
