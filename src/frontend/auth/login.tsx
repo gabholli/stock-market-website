@@ -15,7 +15,7 @@ export default function LogIn() {
             let passwordValue = formData.get("password") as string
             if (!emailValue || !passwordValue) return
 
-            const response = api.post("/auth/login",
+            const response = await api.post("/auth/login",
                 { email: emailValue, password: passwordValue })
 
             if ((await response).data.message) {
