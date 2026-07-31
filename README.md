@@ -8,6 +8,7 @@ I built this stock market app using the following:
 - Tailwind CSS
 - Node.js
 - Express.js
+- MongoDB
 
 ## Getting Started
 ### Dependencies
