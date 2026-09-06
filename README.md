@@ -10,6 +10,8 @@ I built this stock market app using the following:
 - Express.js
 - MongoDB
 
+![Screenshot of Stock Pulse data screen](public/stock_pulse.png)
+
 ## Getting Started
 ### Dependencies
 - Runs within one's web browser of choice
