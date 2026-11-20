@@ -40,7 +40,7 @@ export default function LogIn() {
                 <p className="self-start text-lg">
                     Don't have an account yet? <Link className="text-blue-500" to="/signup">Sign up</Link>
                 </p>
-                <div className="flex flex-col py-4 w-full">
+                <div className="flex flex-col py-4 max-w-72">
                     <input
                         className=" indent-4 p-2 border-white border-2 rounded-xl"
                         type="email"
@@ -50,7 +50,7 @@ export default function LogIn() {
                         required
                     />
                 </div>
-                <div className="flex flex-col py-4 w-full">
+                <div className="flex flex-col py-4 max-w-72">
                     <input
                         className="indent-4 p-2 border-white border-2 rounded-xl"
                         type="password"
@@ -61,7 +61,7 @@ export default function LogIn() {
                     />
                 </div>
 
-                <button className="hover:bg-blue-400 rounded-xl mt-4 px-4 py-2 bg-blue-500 text-white cursor-pointer">Sign In</button>
+                <button className="hover:bg-blue-400 rounded-xl mt-4 px-4 py-2 w-22 bg-blue-500 text-white cursor-pointer">Sign In</button>
                 {/* {error && <p className="text-red-600 text-center pt-4">{error}</p>} */}
             </form >
         </main >
