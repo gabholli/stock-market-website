@@ -35,7 +35,7 @@ export default function SignUp() {
                 <p className="self-start text-lg">
                     Already have an account? <Link className="text-blue-500" to="/login">Sign in</Link>
                 </p>
-                <div className="flex flex-col py-4 max-w-72">
+                <div className="flex flex-col py-4">
                     <input
                         className="indent-4 p-2 border-white border-2 rounded-xl"
                         type="email"
@@ -44,7 +44,7 @@ export default function SignUp() {
                         placeholder="Email"
                     />
                 </div>
-                <div className="flex flex-col py-4 max-w-72">
+                <div className="flex flex-col py-4">
                     <input
                         className="indent-4 p-2 border-white border-2 rounded-xl"
                         type="password"
